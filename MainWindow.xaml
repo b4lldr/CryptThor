@@ -1,6 +1,7 @@
 ﻿<Window x:Class="CryptThor.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CryptThor"
@@ -10,7 +11,7 @@
 
     <!--NAV BUTTONS STYLE-->
     <Window.Resources>
-        <Style TargetType="Button">
+        <Style TargetType="Button" x:Key="Nav">
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -58,14 +59,14 @@
             <!--NAV-->
             <ScrollViewer VerticalScrollBarVisibility="Hidden" Grid.Row="1">
                 <StackPanel>
-                    <Button/>
-                    <Button/>
-                    <Button/>
-                    <Button/>
-                    <Button/>
-                    <Button/>
-                    <Button/>
-                    <Button/>
+                    <Button Style="{StaticResource Nav}"/>
+                    <Button Style="{StaticResource Nav}"/>
+                    <Button Style="{StaticResource Nav}"/>
+                    <Button Style="{StaticResource Nav}"/>
+                    <Button Style="{StaticResource Nav}"/>
+                    <Button Style="{StaticResource Nav}"/>
+                    <Button Style="{StaticResource Nav}"/>
+                    <Button Style="{StaticResource Nav}"/>
                 </StackPanel>
             </ScrollViewer>
         </Grid>
@@ -73,14 +74,38 @@
         <!--TOP & CONTENT-->
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="30"/>
+                <RowDefinition Height="40"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             
             <!--TOP-->
-            <StackPanel Orientation="Horizontal" Background="#16253d" MouseLeftButtonDown="StackPanel_MouseLeftButtonDown">
+            <Grid Background="#16253d" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal">
+                    <Button>
+                        <fa:ImageAwesome Icon="Question"/>
+                    </Button>
+                    <Button>
+                        <fa:ImageAwesome Icon="Cog"/>
+                    </Button>
+                </StackPanel>
 
-            </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Column="2">
+                    <Button>
+                        <fa:ImageAwesome Icon="WindowMinimize"/>
+                    </Button>
+                    <Button>
+                        <fa:ImageAwesome Icon="WindowMaximize"/>
+                    </Button>
+                    <Button>
+                        <fa:ImageAwesome Icon="PowerOff"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
             
             <!--CONTENT-->
             <Grid Grid.Row="1">
