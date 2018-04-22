@@ -6,21 +6,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CryptThor"
         mc:Ignorable="d"
-        Title="CryptThor" Height="700" Width="1050" MinHeight="200" MinWidth="1050" WindowStartupLocation="CenterScreen"
+        Title="CryptThor" Height="700" Width="1050" MinHeight="500" MinWidth="900" WindowStartupLocation="CenterScreen"
         WindowStyle="None" AllowsTransparency="True" ResizeMode="CanResizeWithGrip" Icon="/Images/icon.png">
 
-    <!--NAV BUTTONS STYLE-->
+    <!--STYLES-->
     <Window.Resources>
-        <Style TargetType="Button" x:Key="Nav">
+        <!--ORIGIN BUTTON STYLE-->
+        <Style TargetType="Button" x:Key="Origin">
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border x:Name="border" Background="#16253D" BorderThickness="0">
-                            <Border.Effect>
-                                <DropShadowEffect BlurRadius="7" Direction="330" Color="Black" ShadowDepth="4" Opacity="0.3"/>
-                            </Border.Effect>
-                            <Border.Height>60</Border.Height>
-                            <Border.Margin>0,0,0,4</Border.Margin>
                             <ContentPresenter x:Name="cp" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.Foreground="White"/>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -37,36 +33,61 @@
                 </Setter.Value>
             </Setter>
         </Style>
-    </Window.Resources>
 
-    <!--MAIN GRID-->
+        <!--TOP BUTTONS STYLE-->
+        <Style TargetType="Grid" x:Key="Top">
+            <Style.Resources>
+                <Style TargetType="Button" BasedOn="{StaticResource Origin}">
+                </Style>
+            </Style.Resources>
+        </Style>
+
+        <!--NAV BUTTONS STYLE-->
+        <Style TargetType="ScrollViewer" x:Key="Nav">
+            <Style.Resources>
+                <Style TargetType="Button" BasedOn="{StaticResource Origin}">
+                    <Setter Property="Height" Value="60"/>
+                    <Setter Property="Margin" Value="0,0,0,4"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+
+        <!--TOP FONT STYLE-->
+        <Style TargetType="fa:ImageAwesome">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Margin" Value="12"/>
+        </Style>
+    </Window.Resources>
+        
+
+    <!--|MAIN GRID|-->
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        
+
         <!--LOGO & NAV-->
         <Grid Background="#30476d">
             <Grid.RowDefinitions>
                 <RowDefinition Height="70"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            
+
             <!--LOGO-->
             <Image Source="/Images/logo.png" Margin="10,10,10,30"/>
 
             <!--NAV-->
-            <ScrollViewer VerticalScrollBarVisibility="Hidden" Grid.Row="1">
+            <ScrollViewer VerticalScrollBarVisibility="Hidden" Grid.Row="1" Style="{StaticResource Nav}">
                 <StackPanel>
-                    <Button Style="{StaticResource Nav}"/>
-                    <Button Style="{StaticResource Nav}"/>
-                    <Button Style="{StaticResource Nav}"/>
-                    <Button Style="{StaticResource Nav}"/>
-                    <Button Style="{StaticResource Nav}"/>
-                    <Button Style="{StaticResource Nav}"/>
-                    <Button Style="{StaticResource Nav}"/>
-                    <Button Style="{StaticResource Nav}"/>
+                    <Button/>
+                    <Button/>
+                    <Button/>
+                    <Button/>
+                    <Button/>
+                    <Button/>
+                    <Button/>
+                    <Button/>
                 </StackPanel>
             </ScrollViewer>
         </Grid>
@@ -77,14 +98,16 @@
                 <RowDefinition Height="40"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            
+
             <!--TOP-->
-            <Grid Background="#16253d" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
+            <Grid Background="#16253d" MouseLeftButtonDown="Grid_MouseLeftButtonDown" Style="{StaticResource Top}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
+
+                <!--LEFT-->
                 <StackPanel Orientation="Horizontal">
                     <Button>
                         <fa:ImageAwesome Icon="Question"/>
@@ -94,9 +117,10 @@
                     </Button>
                 </StackPanel>
 
+                <!--RIGHT-->
                 <StackPanel Orientation="Horizontal" Grid.Column="2">
                     <Button>
-                        <fa:ImageAwesome Icon="WindowMinimize"/>
+                        <fa:ImageAwesome Icon="WindowMinimize" Margin="12,23,12,12"/>
                     </Button>
                     <Button>
                         <fa:ImageAwesome Icon="WindowMaximize"/>
@@ -106,7 +130,7 @@
                     </Button>
                 </StackPanel>
             </Grid>
-            
+
             <!--CONTENT-->
             <Grid Grid.Row="1">
                 <Grid.Background>
