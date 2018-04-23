@@ -7,12 +7,16 @@
         xmlns:local="clr-namespace:CryptThor"
         mc:Ignorable="d"
         Title="CryptThor" Height="700" Width="1050" MinHeight="500" MinWidth="900" WindowStartupLocation="CenterScreen"
-        WindowStyle="None" AllowsTransparency="True" ResizeMode="CanResizeWithGrip" Icon="/Images/icon.png">
+        WindowStyle="None" AllowsTransparency="True" Icon="/Images/icon.png" StateChanged="Window_StateChanged">
 
-    <!--STYLES-->
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="40"/>
+    </WindowChrome.WindowChrome>
+
+        <!--STYLES-->
     <Window.Resources>
         <!--ORIGIN BUTTON STYLE-->
-        <Style TargetType="Button" x:Key="Origin">
+        <Style TargetType="Button" x:Key="Base">
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -37,7 +41,7 @@
         <!--TOP BUTTONS STYLE-->
         <Style TargetType="Grid" x:Key="Top">
             <Style.Resources>
-                <Style TargetType="Button" BasedOn="{StaticResource Origin}">
+                <Style TargetType="Button" BasedOn="{StaticResource Base}">
                 </Style>
             </Style.Resources>
         </Style>
@@ -45,7 +49,7 @@
         <!--NAV BUTTONS STYLE-->
         <Style TargetType="ScrollViewer" x:Key="Nav">
             <Style.Resources>
-                <Style TargetType="Button" BasedOn="{StaticResource Origin}">
+                <Style TargetType="Button" BasedOn="{StaticResource Base}">
                     <Setter Property="Height" Value="60"/>
                     <Setter Property="Margin" Value="0,0,0,4"/>
                 </Style>
@@ -75,7 +79,9 @@
             </Grid.RowDefinitions>
 
             <!--LOGO-->
-            <Image Source="/Images/logo.png" Margin="10,10,10,30"/>
+            <Grid Background="#30476d" WindowChrome.IsHitTestVisibleInChrome="True"> <!--Grid with bcg to make sure drag does not work here-->
+                <Image Source="/Images/logo.png" Margin="10,10,10,30"/>
+            </Grid>
 
             <!--NAV-->
             <ScrollViewer VerticalScrollBarVisibility="Hidden" Grid.Row="1" Style="{StaticResource Nav}">
@@ -100,7 +106,7 @@
             </Grid.RowDefinitions>
 
             <!--TOP-->
-            <Grid Background="#16253d" MouseLeftButtonDown="Grid_MouseLeftButtonDown" Style="{StaticResource Top}">
+            <Grid x:Name="gridTop" Background="#16253d" Style="{StaticResource Top}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
@@ -108,25 +114,25 @@
                 </Grid.ColumnDefinitions>
 
                 <!--LEFT-->
-                <StackPanel Orientation="Horizontal">
-                    <Button>
+                <StackPanel Orientation="Horizontal" WindowChrome.IsHitTestVisibleInChrome="True">
+                    <Button x:Name="btnHelp" Click="btnHelp_Click">
                         <fa:ImageAwesome Icon="Question"/>
                     </Button>
-                    <Button>
+                    <Button x:Name="btnSett" Click="btnSett_Click">
                         <fa:ImageAwesome Icon="Cog"/>
                     </Button>
                 </StackPanel>
 
                 <!--RIGHT-->
-                <StackPanel Orientation="Horizontal" Grid.Column="2">
-                    <Button>
+                <StackPanel Orientation="Horizontal" Grid.Column="2" WindowChrome.IsHitTestVisibleInChrome="True">
+                    <Button x:Name="btnMin" Click="btnMin_Click">
                         <fa:ImageAwesome Icon="WindowMinimize" Margin="12,23,12,12"/>
                     </Button>
-                    <Button>
-                        <fa:ImageAwesome Icon="WindowMaximize"/>
+                    <Button x:Name="btnMax" Click="btnMax_Click">
+                        <fa:ImageAwesome x:Name="imgMax" Icon="WindowMaximize"/>
                     </Button>
-                    <Button>
-                        <fa:ImageAwesome Icon="PowerOff"/>
+                    <Button x:Name="btnClose" Click="btnClose_Click">
+                        <fa:ImageAwesome Icon="Close"/>
                     </Button>
                 </StackPanel>
             </Grid>
