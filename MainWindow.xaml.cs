@@ -20,14 +20,17 @@ namespace CryptThor
     /// </summary>
     public partial class MainWindow : Window
     {
+        ViewModel vm = new ViewModel();
+
+
         public MainWindow()
         {
             InitializeComponent();
 
-            MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
-            MaxWidth = SystemParameters.MaximizedPrimaryScreenWidth; 
+            DataContext = vm;
         }
 
+        #region TopButtons
         private void btnHelp_Click(object sender, RoutedEventArgs e)
         {
 
@@ -57,5 +60,70 @@ namespace CryptThor
         {
             imgMax.Icon = WindowState == WindowState.Maximized ? FontAwesome.WPF.FontAwesomeIcon.WindowRestore : FontAwesome.WPF.FontAwesomeIcon.WindowMaximize;
         }
+        #endregion
+
+        #region NavButtons
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            vm.ToCaesar();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            vm.ToVigenere();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            vm.ToScytale();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+
+        }
+        #endregion
+
+        #region Encryption/Decryption
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                vm.Encrypt(true, textboxInput.Text, textboxKey.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Chyba", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
+        }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                vm.Decrypt(textboxInput.Text, textboxKey.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Chyba", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
+        }
+
+        private void Button_Click_8(object sender, RoutedEventArgs e)
+        {
+            vm.RemoveSpaces();
+        }
+
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            vm.TextReverse();
+        }
+        #endregion
+
     }
 }

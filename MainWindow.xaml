@@ -6,63 +6,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CryptThor"
         mc:Ignorable="d"
-        Title="CryptThor" Height="700" Width="1050" MinHeight="500" MinWidth="900" WindowStartupLocation="CenterScreen"
-        WindowStyle="None" AllowsTransparency="True" Icon="/Images/icon.png" StateChanged="Window_StateChanged">
+        Title="CryptThor" Height="700" Width="1050" MinHeight="500" MinWidth="900"
+        MaxHeight="{Binding Source={x:Static SystemParameters.MaximizedPrimaryScreenHeight}, Mode=OneWay}"
+        MaxWidth="{Binding Source={x:Static SystemParameters.MaximizedPrimaryScreenWidth}, Mode=OneWay}"
+        WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True"
+        Icon="/Images/icon.png" StateChanged="Window_StateChanged">
 
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="40"/>
     </WindowChrome.WindowChrome>
-
-        <!--STYLES-->
-    <Window.Resources>
-        <!--ORIGIN BUTTON STYLE-->
-        <Style TargetType="Button" x:Key="Base">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border x:Name="border" Background="#16253D" BorderThickness="0">
-                            <ContentPresenter x:Name="cp" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.Foreground="White"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="border" Property="Background" Value="#002c54"/>
-                                <Setter TargetName="cp" Property="TextBlock.Foreground" Value="White"/>
-                            </Trigger>
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter TargetName="border" Property="Background" Value="#FFC39408"/>
-                                <Setter TargetName="cp" Property="TextBlock.Foreground" Value="White"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-        <!--TOP BUTTONS STYLE-->
-        <Style TargetType="Grid" x:Key="Top">
-            <Style.Resources>
-                <Style TargetType="Button" BasedOn="{StaticResource Base}">
-                </Style>
-            </Style.Resources>
-        </Style>
-
-        <!--NAV BUTTONS STYLE-->
-        <Style TargetType="ScrollViewer" x:Key="Nav">
-            <Style.Resources>
-                <Style TargetType="Button" BasedOn="{StaticResource Base}">
-                    <Setter Property="Height" Value="60"/>
-                    <Setter Property="Margin" Value="0,0,0,4"/>
-                </Style>
-            </Style.Resources>
-        </Style>
-
-        <!--TOP FONT STYLE-->
-        <Style TargetType="fa:ImageAwesome">
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Margin" Value="12"/>
-        </Style>
-    </Window.Resources>
-        
 
     <!--|MAIN GRID|-->
     <Grid>
@@ -72,31 +24,24 @@
         </Grid.ColumnDefinitions>
 
         <!--LOGO & NAV-->
-        <Grid Background="#30476d">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="70"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-
+        <DockPanel Background="#30476d">
+            
             <!--LOGO-->
-            <Grid Background="#30476d" WindowChrome.IsHitTestVisibleInChrome="True"> <!--Grid with bcg to make sure drag does not work here-->
-                <Image Source="/Images/logo.png" Margin="10,10,10,30"/>
+            <Grid Background="#30476d" WindowChrome.IsHitTestVisibleInChrome="True" DockPanel.Dock="Top"> <!--Grid with bcg to make sure drag does not work here-->
+                <Image Source="/Images/logo.png" Margin="20,10,20,30"/>
             </Grid>
 
             <!--NAV-->
-            <ScrollViewer VerticalScrollBarVisibility="Hidden" Grid.Row="1" Style="{StaticResource Nav}">
+            <ScrollViewer VerticalScrollBarVisibility="Hidden"  Style="{StaticResource Nav}">
                 <StackPanel>
-                    <Button/>
-                    <Button/>
-                    <Button/>
-                    <Button/>
-                    <Button/>
-                    <Button/>
-                    <Button/>
-                    <Button/>
+                    <Button Content="Cézarova šifra" Click="Button_Click"/>
+                    <Button Content="Vigenerova šifra" Click="Button_Click_1"/>
+                    <Button Content="Skytalé" Click="Button_Click_2"/>
+                    <Button Click="Button_Click_3"/>
+                    <Button Click="Button_Click_4"/>
                 </StackPanel>
             </ScrollViewer>
-        </Grid>
+        </DockPanel>
 
         <!--TOP & CONTENT-->
         <Grid Grid.Column="1">
@@ -138,10 +83,39 @@
             </Grid>
 
             <!--CONTENT-->
-            <Grid Grid.Row="1">
+            <Grid x:Name="Content" Grid.Row="1" Style="{StaticResource Content}">
                 <Grid.Background>
                     <ImageBrush ImageSource="/Images/bcg.png"/>
                 </Grid.Background>
+
+                <StackPanel Margin="40,40,40,0">
+                    <!--CAPTION-->
+                    <TextBlock Text="{Binding Caption}" HorizontalAlignment="Center" FontSize="40" Margin="0,0,0, 20"/>
+
+                    <!--ENCRYPTION/DECRYpTION-->
+                    <TextBlock Text="Šifrování a dešifrování" HorizontalAlignment="Center" Margin="0,0,0, 10"/>
+                    <TextBox Text="{Binding CurrentText}" x:Name="textboxInput" Height="100" FontSize="20" TextWrapping="Wrap"/>
+
+                    <TextBlock Text="Klíč"/>
+                    <TextBox x:Name="textboxKey" Text="{Binding CurrentKey}" Height="30" Margin="0,0,0,20"/>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
+                        <Button Content="Šifrovat" Height="60" Width="120" Click="Button_Click_5"/>
+
+                        <StackPanel Margin="60,0">
+                            <Button Content="Odstranit mezery" Width="100" Height="30" Click="Button_Click_8" Margin="0,0,0,10"/>
+                            <Button Content="Text pozpátku" Width="100" Height="30" Click="Button_Click_7"/>
+                        </StackPanel>
+                        
+                        <Button Content="Dešifrovat" Height="60" Width="120" Click="Button_Click_6"/>
+                    </StackPanel>
+
+                    <TextBox Text="{Binding Output, Mode=OneWay}" IsReadOnly="True" Background="LightGray" Height="100" Margin="0,0,0,20"/>
+
+                    <!--DESCRIPTION-->
+                    <TextBlock Text="Popis šifry" HorizontalAlignment="Center" Margin="0,0,0, 10"/>
+                    <TextBlock Text="{Binding Description}" FontWeight="Normal"/>
+                </StackPanel>
             </Grid>
         </Grid>
     </Grid>
