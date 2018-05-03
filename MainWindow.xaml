@@ -36,9 +36,8 @@
                 <StackPanel>
                     <Button Content="Cézarova šifra" Click="Button_Click"/>
                     <Button Content="Vigenerova šifra" Click="Button_Click_1"/>
-                    <Button Content="Skytalé" Click="Button_Click_2"/>
-                    <Button Click="Button_Click_3"/>
-                    <Button Click="Button_Click_4"/>
+                    <Button Content="Vernamova šifra" Click="Button_Click_2"/>
+                    <Button Content="Skytalé" Click="Button_Click_3"/>
                 </StackPanel>
             </ScrollViewer>
         </DockPanel>
@@ -61,10 +60,10 @@
                 <!--LEFT-->
                 <StackPanel Orientation="Horizontal" WindowChrome.IsHitTestVisibleInChrome="True">
                     <Button x:Name="btnHelp" Click="btnHelp_Click">
-                        <fa:ImageAwesome Icon="Question"/>
+                        <fa:ImageAwesome Icon="Book"/>
                     </Button>
                     <Button x:Name="btnSett" Click="btnSett_Click">
-                        <fa:ImageAwesome Icon="Cog"/>
+                        <fa:ImageAwesome Icon="Question"/>
                     </Button>
                 </StackPanel>
 
@@ -83,39 +82,12 @@
             </Grid>
 
             <!--CONTENT-->
-            <Grid x:Name="Content" Grid.Row="1" Style="{StaticResource Content}">
+            <Grid Grid.Row="1">
                 <Grid.Background>
                     <ImageBrush ImageSource="/Images/bcg.png"/>
                 </Grid.Background>
-
-                <StackPanel Margin="40,40,40,0">
-                    <!--CAPTION-->
-                    <TextBlock Text="{Binding Caption}" HorizontalAlignment="Center" FontSize="40" Margin="0,0,0, 20"/>
-
-                    <!--ENCRYPTION/DECRYpTION-->
-                    <TextBlock Text="Šifrování a dešifrování" HorizontalAlignment="Center" Margin="0,0,0, 10"/>
-                    <TextBox Text="{Binding CurrentText}" x:Name="textboxInput" Height="100" FontSize="20" TextWrapping="Wrap"/>
-
-                    <TextBlock Text="Klíč"/>
-                    <TextBox x:Name="textboxKey" Text="{Binding CurrentKey}" Height="30" Margin="0,0,0,20"/>
-
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
-                        <Button Content="Šifrovat" Height="60" Width="120" Click="Button_Click_5"/>
-
-                        <StackPanel Margin="60,0">
-                            <Button Content="Odstranit mezery" Width="100" Height="30" Click="Button_Click_8" Margin="0,0,0,10"/>
-                            <Button Content="Text pozpátku" Width="100" Height="30" Click="Button_Click_7"/>
-                        </StackPanel>
-                        
-                        <Button Content="Dešifrovat" Height="60" Width="120" Click="Button_Click_6"/>
-                    </StackPanel>
-
-                    <TextBox Text="{Binding Output, Mode=OneWay}" IsReadOnly="True" Background="LightGray" Height="100" Margin="0,0,0,20"/>
-
-                    <!--DESCRIPTION-->
-                    <TextBlock Text="Popis šifry" HorizontalAlignment="Center" Margin="0,0,0, 10"/>
-                    <TextBlock Text="{Binding Description}" FontWeight="Normal"/>
-                </StackPanel>
+                
+                <ContentControl Content="{Binding}"/>
             </Grid>
         </Grid>
     </Grid>

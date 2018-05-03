@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:CryptThor"
+                    xmlns:viewmodels="clr-namespace:CryptThor.ViewModels"
+                    xmlns:views="clr-namespace:CryptThor.Views">
+
+    <DataTemplate x:Name="IntroViewTemplate" DataType="{x:Type viewmodels:IntroViewModel}">
+        <views:IntroView DataContext="{Binding}"/>
+    </DataTemplate>
+    <DataTemplate x:Name="CipherViewTemplate" DataType="{x:Type viewmodels:CipherViewModel}">
+        <views:CipherView DataContext="{Binding}"/>
+    </DataTemplate>
+    <DataTemplate x:Name="DictionaryViewTemplate" DataType="{x:Type viewmodels:DictionaryViewModel}">
+        <views:DictionaryView DataContext="{Binding}"/>
+    </DataTemplate>
+</ResourceDictionary>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CryptThor.ViewModels;
 
 namespace CryptThor
 {
@@ -20,25 +21,24 @@ namespace CryptThor
     /// </summary>
     public partial class MainWindow : Window
     {
-        ViewModel vm = new ViewModel();
-
+        CipherViewModel cvm = Creator.cvm;
 
         public MainWindow()
         {
             InitializeComponent();
 
-            DataContext = vm;
+            DataContext = new IntroViewModel();
         }
 
         #region TopButtons
         private void btnHelp_Click(object sender, RoutedEventArgs e)
         {
-
+            DataContext = new IntroViewModel();
         }
 
         private void btnSett_Click(object sender, RoutedEventArgs e)
         {
-
+            DataContext = new DictionaryViewModel();
         }
 
         private void btnMin_Click(object sender, RoutedEventArgs e)
@@ -65,65 +65,28 @@ namespace CryptThor
         #region NavButtons
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            vm.ToCaesar();
+            DataContext = cvm;
+            cvm.ToCaesar();
+
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            vm.ToVigenere();
+            DataContext = cvm;
+            cvm.ToVigenere();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            vm.ToScytale();
+            DataContext = cvm;
+            cvm.ToVernam();
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void Button_Click_4(object sender, RoutedEventArgs e)
-        {
-
+            DataContext = cvm;
+            cvm.ToScytale();
         }
         #endregion
-
-        #region Encryption/Decryption
-        private void Button_Click_5(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                vm.Encrypt(true, textboxInput.Text, textboxKey.Text);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Chyba", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-            }
-        }
-
-        private void Button_Click_6(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                vm.Decrypt(textboxInput.Text, textboxKey.Text);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Chyba", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-            }
-        }
-
-        private void Button_Click_8(object sender, RoutedEventArgs e)
-        {
-            vm.RemoveSpaces();
-        }
-
-        private void Button_Click_7(object sender, RoutedEventArgs e)
-        {
-            vm.TextReverse();
-        }
-        #endregion
-
     }
 }

@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="CryptThor.Views.CipherView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CryptThor.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="660" d:DesignWidth="850">
+
+    <!--TODO: font weight issue, better styling-->
+    <Grid Grid.Row="1" Style="{StaticResource Content}">
+        <ScrollViewer VerticalScrollBarVisibility="Hidden">
+            <StackPanel Margin="40,40,40,0">
+                <!--CAPTION-->
+                <TextBlock Text="{Binding Caption}" HorizontalAlignment="Center" FontSize="50" Margin="0,0,0, 20"/>
+
+                <!--ENCRYPTION/DECRYPTION-->
+                <TextBlock Text="Šifrování a dešifrování" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" Margin="0,0,0, 10"/>
+                <TextBox x:Name="textboxInput" Text="{Binding CurrentText}" Height="100" FontSize="20" TextWrapping="Wrap"/>
+
+                <TextBlock Text="Klíč" FontWeight="Bold"/>
+                <TextBox x:Name="textboxKey" Text="{Binding CurrentKey}" Height="30" Margin="0,0,0,20"/>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
+                    <Button  x:Name="btnEncode" Content="Šifrovat" Height="60" Width="120" Click="btnEncode_Click"/>
+
+                    <StackPanel Margin="60,0">
+                        <Button x:Name="btnRemoveSpaces" Content="Odstranit mezery" Width="100" Height="30" Click="btnRemoveSpaces_Click" Margin="0,0,0,10"/>
+                        <Button x:Name="btnReverseText" Content="Text pozpátku" Width="100" Height="30" Click="btnReverseText_Click"/>
+                    </StackPanel>
+
+                    <Button x:Name="btnDecode" Content="Dešifrovat" Height="60" Width="120" Click="btnDecode_Click"/>
+                </StackPanel>
+
+                <TextBox Text="{Binding Output, Mode=OneWay}" IsReadOnly="True" FontSize="20" Background="LightGray" Height="100" Margin="0,0,0,20"/>
+
+                <!--DESCRIPTION-->
+                <TextBlock Text="Popis šifry" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" Margin="0,0,0, 10"/>
+                <TextBlock Text="{Binding Description}" FontWeight="Bold" TextWrapping="Wrap"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
