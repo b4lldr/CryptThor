@@ -8,7 +8,21 @@
              d:DesignHeight="660" d:DesignWidth="850">
 
     
-    <!--TODO: styling, colors-->
+    <!--TODO: include style into styles dictionary, colors-->
+    <UserControl.Resources>
+        <Style TargetType="Grid">
+            <Style.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Foreground" Value="#002c54"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="FontSize" Value="20"/>
+                    <Setter Property="TextWrapping" Value="Wrap"/>
+                </Style>
+
+            </Style.Resources>
+        </Style>
+    </UserControl.Resources>
+    
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Images/bcg.png"/>
@@ -18,20 +32,20 @@
             <StackPanel Margin="40,0,40,0">
                 <TextBlock Text="Vítejte v aplikaci CryptThor!" FontSize="50" HorizontalAlignment="Center" Margin="0,0,0,20"/>
 
-                <TextBlock TextWrapping="Wrap" Text="CryptThor je jednoduchá desktopová aplikace na šifrování textu."/>
-                <TextBlock TextWrapping="Wrap" Text="Umožňuje zašifrovat či dešifrovat libovolný text pomocí jakékoliv šifry z levého postraního menu, a to pomocí jednoduchého rozhraní."/>
-                <TextBlock TextWrapping="Wrap" Text="Rozhraní navíc umožňuje i drobné úpravy textu jako je odstranění mezer nebo otočení textu."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Ke každé šifře je také dostupný stručný popis pro lepší pochopení a orientaci."/>
-                <TextBlock TextWrapping="Wrap" Text="Tato uvítací obrazovka je dostupná pod knihou v horní liště."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Vedle knihy můžete nalézt otazník, který vám zobrazí přehled základních kryptologických pojmů."/>
-                <TextBlock TextWrapping="Wrap" Text="Velikost okna je měnitelná, ale je pevně daná minimální velikost. Aplikace se chová jako klasické okno."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="V levém menu, v úvodní obrazovce, ve slovníku i v šifrovacím rozhraní se jde pohybovat kolečkem myši, pokud se celý obsah nevejde do okna."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" FontSize="30" HorizontalAlignment="Center" Text="Obecné informace o šifrování"/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Pro jednoduchost jsou vždy při šifraci ze vstupního textu odebrány háčky a čárky nad písmeny."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Všechny nepísmenné znaky (všetně mezer) šifrovány nejsou a ve výstupním textu zůstavají nezměněny. Příslušný znak v klíči je tak přeskočen!"/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="V klíči jsou povoleny pouze písmena anglické abecedy. Napsat do pole lze i ostatní znaky, ale při šifraci budou odstraněny."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Velikost písmen je zachována jak u vstupního textu, tak i u klíče."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Do výstupního pole nelze psát, ale text je možné odtud zkopírovat pro další použití."/>
+                <TextBlock Text="CryptThor je jednoduchá desktopová aplikace na šifrování textu."/>
+                <TextBlock Text="Umožňuje zašifrovat či dešifrovat libovolný text pomocí jakékoliv šifry z levého postraního menu, a to pomocí jednoduchého rozhraní."/>
+                <TextBlock Text="Rozhraní navíc umožňuje i drobné úpravy textu jako je odstranění mezer nebo otočení textu."/>
+                <TextBlock Margin="0,0,0,20" Text="Ke každé šifře je také dostupný stručný popis pro lepší pochopení a orientaci."/>
+                <TextBlock Text="Tato uvítací obrazovka je dostupná pod knihou v horní liště."/>
+                <TextBlock Margin="0,0,0,20" Text="Vedle knihy můžete nalézt otazník, který vám zobrazí přehled základních kryptologických pojmů."/>
+                <TextBlock Text="Velikost okna je měnitelná, ale je pevně daná minimální velikost. Aplikace se chová jako klasické okno."/>
+                <TextBlock Margin="0,0,0,20" Text="V levém menu, v úvodní obrazovce, ve slovníku i v šifrovacím rozhraní se jde pohybovat kolečkem myši, pokud se celý obsah nevejde do okna."/>
+                <TextBlock Margin="0,0,0,20" FontSize="30" HorizontalAlignment="Center" Text="Obecné informace o šifrování"/>
+                <TextBlock Margin="0,0,0,20" Text="Pro jednoduchost jsou vždy při šifraci ze vstupního textu odebrány háčky a čárky nad písmeny."/>
+                <TextBlock Margin="0,0,0,20" Text="Všechny nepísmenné znaky (všetně mezer) šifrovány nejsou a ve výstupním textu zůstavají nezměněny. Příslušný znak v klíči je tak přeskočen!"/>
+                <TextBlock Margin="0,0,0,20" Text="V klíči jsou povoleny pouze písmena anglické abecedy. Napsat do pole lze i ostatní znaky, ale při šifraci budou odstraněny."/>
+                <TextBlock Margin="0,0,0,20" Text="Velikost písmen je zachována jak u vstupního textu, tak i u klíče."/>
+                <TextBlock Margin="0,0,0,20" Text="Do výstupního pole nelze psát, ale text je možné odtud zkopírovat pro další použití."/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

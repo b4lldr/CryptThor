@@ -4,12 +4,17 @@
                     xmlns:viewmodels="clr-namespace:CryptThor.ViewModels"
                     xmlns:views="clr-namespace:CryptThor.Views">
 
+    <!--INTRO SWITCH-->
     <DataTemplate x:Name="IntroViewTemplate" DataType="{x:Type viewmodels:IntroViewModel}">
         <views:IntroView DataContext="{Binding}"/>
     </DataTemplate>
+    
+    <!--CIPHER SWITCH-->
     <DataTemplate x:Name="CipherViewTemplate" DataType="{x:Type viewmodels:CipherViewModel}">
         <views:CipherView DataContext="{Binding}"/>
     </DataTemplate>
+    
+    <!--DIRECTIORY SWITCH-->
     <DataTemplate x:Name="DictionaryViewTemplate" DataType="{x:Type viewmodels:DictionaryViewModel}">
         <views:DictionaryView DataContext="{Binding}"/>
     </DataTemplate>

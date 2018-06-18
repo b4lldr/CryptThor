@@ -7,7 +7,22 @@
              mc:Ignorable="d" 
              d:DesignHeight="660" d:DesignWidth="850">
 
-    <!--TODO: styling, colors, better wording-->
+    <!--TODO: include style into styles dictionary, colors, better wording-->
+    <UserControl.Resources>
+        <Style TargetType="Grid">
+            <Style.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Foreground" Value="#002c54"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="FontSize" Value="20"/>
+                    <Setter Property="TextWrapping" Value="Wrap"/>
+                    <Setter Property="Margin" Value="0,0,0,20"/>
+                </Style>
+                
+            </Style.Resources>
+        </Style>
+    </UserControl.Resources>
+    
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Images/bcg.png"/>
@@ -17,38 +32,38 @@
             <StackPanel Margin="40,0,40,0">
                 <TextBlock Text="Slovník pojmů" FontSize="50" HorizontalAlignment="Center" Margin="0,0,0,20"/>
 
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Kryptologie: Věda o šifrách. Skládá se z kryptografie a kryptoanalýzy."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Kryptigrafie: Věda o vytváření šifrovacích systémů (šifer), neboli zabývá se metodami utajení (šifrováním)."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Kryptoanalýza: Věda zabývající se luštěním (dešifrováním) zašifrovaných zpráv."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Steganografie: Zabývá se ukrýváním samotné existence zprávy, klidně i otevřeného textu."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Šifrování: Převod otevřeného textu na šifrový text."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Dešifrování: Převod šifrového textu na otevřený text."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Kódování: Převod informace z jedné formy do druhé. Například běžný text do Morseova kódu. Provádí se před samotným šifrováním"/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Šifrovací systém (Šifra): Systém, který změní otevřený text na zašifrovanou zprávu."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Otevřený text (plain text, kryptogram): Čitelný, nezašifrovaný text. Vstup šifrovacího algoritmu, výstup dešifrovacího."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Šifrový text (cipher text): Zabezpečený (zašifrovaný) otevřený text."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Klíč: Návod jak postupovat při šifrování či dešifrování zprávy. Každý klíč zašyfruje zprávu jinak."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Klíčový prostor: Množina všech možných klíčů. Velikost množiny určuje odolnost šifry vůči útoku hrubou silou."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Klíčové hospodářství: Označení pro zacházení s klíči, jako je jejich uchovávání, předávání (distribuce), atp."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Substituce (záměna): Znaky otevřeného textu se mění na jiné znaky. Základní šifrovací systém"/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Transpozice (přesun): Znaky otevřeného textu se nemění, pouze promíchají mezi sebou. Základní šifrovací systém"/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Pen and paper šifra: Jednoduchá šifra snadno proveditelná i ručně pomocí tužky a papíru."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Monoalfabetická šifra: Šifra používající jednu abecedu."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Polyalfabetická šifra: Šifra používající více abeced"/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Symetrická šifra: Klíč pro šifrování i dešifrování je stejný. Vyžaduje předání klíče před samotnou šifrovanou komunikací."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Asymetrická šifra: Šifrování pomocí veřejného a soukromého klíče."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Bloková šifra: Typ symetrické šifry, která pracuje s bloky konstantní délky."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Komunikační kanál (přenosový kanál): Médium, prostřednictvím kterého dochází k přenosu zpráv (komunikaci)."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Útok na šifru: Pokus neadresované osoby o prolomení (dešifrování) šifry."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Útok hrubou silou: Útok na šifru, který se snaží prolomit šifru díky prohledání celého klíčového prostoru (vyzkoušením všech kombinací)."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Alice: Fiktivní postava reprezentující odesilatele šifrované zprávy."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Bob: Fiktivní postava reprezentující příjemce šifrované zprávy."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Eva: Fiktivní postava reprezentující odposlouchávače snažícího se číst komunikaci mezi Alicí a Bobem."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Klamač: Znak bez významu. Slouží ke ztížený prolomení šifry a zvyšuje tak bezpečnost."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Nomenklátor: Zástupný znak/slovo jiné slovo nebo i delší části. Nutnost komunikujících stran se předem domluvit."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Šifrovací funkce: Funkce užívaná v šifrovacím algoritmu pro zašifrování textu."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Inverzní funkce: Opačná funkce k šifrovací funkcu, která dokáže dešifrovat zašifrovaný text."/>
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20" Text="Jednosměrná funkce (se zadními vrátky): Funkce používaná při asymetrickém šifrování jako veřejný klíč. Zadními vrátky je myšlem privátní klíč, který dokáže zprávu dešifrovat."/>
+                <TextBlock Text="Kryptologie: Věda o šifrách. Skládá se z kryptografie a kryptoanalýzy."/>
+                <TextBlock Text="Kryptigrafie: Věda o vytváření šifrovacích systémů (šifer), neboli zabývá se metodami utajení (šifrováním)."/>
+                <TextBlock Text="Kryptoanalýza: Věda zabývající se luštěním (dešifrováním) zašifrovaných zpráv."/>
+                <TextBlock Text="Steganografie: Zabývá se ukrýváním samotné existence zprávy, klidně i otevřeného textu."/>
+                <TextBlock Text="Šifrování: Převod otevřeného textu na šifrový text."/>
+                <TextBlock Text="Dešifrování: Převod šifrového textu na otevřený text."/>
+                <TextBlock Text="Kódování: Převod informace z jedné formy do druhé. Například běžný text do Morseova kódu. Provádí se před samotným šifrováním"/>
+                <TextBlock Text="Šifrovací systém (Šifra): Systém, který změní otevřený text na zašifrovanou zprávu."/>
+                <TextBlock Text="Otevřený text (plain text, kryptogram): Čitelný, nezašifrovaný text. Vstup šifrovacího algoritmu, výstup dešifrovacího."/>
+                <TextBlock Text="Šifrový text (cipher text): Zabezpečený (zašifrovaný) otevřený text."/>
+                <TextBlock Text="Klíč: Návod jak postupovat při šifrování či dešifrování zprávy. Každý klíč zašyfruje zprávu jinak."/>
+                <TextBlock Text="Klíčový prostor: Množina všech možných klíčů. Velikost množiny určuje odolnost šifry vůči útoku hrubou silou."/>
+                <TextBlock Text="Klíčové hospodářství: Označení pro zacházení s klíči, jako je jejich uchovávání, předávání (distribuce), atp."/>
+                <TextBlock Text="Substituce (záměna): Znaky otevřeného textu se mění na jiné znaky. Základní šifrovací systém"/>
+                <TextBlock Text="Transpozice (přesun): Znaky otevřeného textu se nemění, pouze promíchají mezi sebou. Základní šifrovací systém"/>
+                <TextBlock Text="Pen and paper šifra: Jednoduchá šifra snadno proveditelná i ručně pomocí tužky a papíru."/>
+                <TextBlock Text="Monoalfabetická šifra: Šifra používající jednu abecedu."/>
+                <TextBlock Text="Polyalfabetická šifra: Šifra používající více abeced"/>
+                <TextBlock Text="Symetrická šifra: Klíč pro šifrování i dešifrování je stejný. Vyžaduje předání klíče před samotnou šifrovanou komunikací."/>
+                <TextBlock Text="Asymetrická šifra: Šifrování pomocí veřejného a soukromého klíče."/>
+                <TextBlock Text="Bloková šifra: Typ symetrické šifry, která pracuje s bloky konstantní délky."/>
+                <TextBlock Text="Komunikační kanál (přenosový kanál): Médium, prostřednictvím kterého dochází k přenosu zpráv (komunikaci)."/>
+                <TextBlock Text="Útok na šifru: Pokus neadresované osoby o prolomení (dešifrování) šifry."/>
+                <TextBlock Text="Útok hrubou silou: Útok na šifru, který se snaží prolomit šifru díky prohledání celého klíčového prostoru (vyzkoušením všech kombinací)."/>
+                <TextBlock Text="Alice: Fiktivní postava reprezentující odesilatele šifrované zprávy."/>
+                <TextBlock Text="Bob: Fiktivní postava reprezentující příjemce šifrované zprávy."/>
+                <TextBlock Text="Eva: Fiktivní postava reprezentující odposlouchávače snažícího se číst komunikaci mezi Alicí a Bobem."/>
+                <TextBlock Text="Klamač: Znak bez významu. Slouží ke ztížený prolomení šifry a zvyšuje tak bezpečnost."/>
+                <TextBlock Text="Nomenklátor: Zástupný znak/slovo jiné slovo nebo i delší části. Nutnost komunikujících stran se předem domluvit."/>
+                <TextBlock Text="Šifrovací funkce: Funkce užívaná v šifrovacím algoritmu pro zašifrování textu."/>
+                <TextBlock Text="Inverzní funkce: Opačná funkce k šifrovací funkcu, která dokáže dešifrovat zašifrovaný text."/>
+                <TextBlock Text="Jednosměrná funkce (se zadními vrátky): Funkce používaná při asymetrickém šifrování jako veřejný klíč. Zadními vrátky je myšlem privátní klíč, který dokáže zprávu dešifrovat."/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

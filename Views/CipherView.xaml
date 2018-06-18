@@ -9,6 +9,10 @@
 
     <!--TODO: font weight issue, better styling-->
     <Grid Grid.Row="1" Style="{StaticResource Content}">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/bcg.png"/>
+        </Grid.Background>
+        
         <ScrollViewer VerticalScrollBarVisibility="Hidden">
             <StackPanel Margin="40,40,40,0">
                 <!--CAPTION-->

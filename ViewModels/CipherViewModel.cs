@@ -23,10 +23,14 @@ namespace CryptThor.ViewModels
         public string Output { get; private set; }
         public string CurrentText { get; set; }
         public string CurrentKey { get; set; }
+
+        /// <summary>
+        /// Methods called when ciphher is changed
+        /// </summary>
         #region CipherChange
         void CipherChange()
         {
-            CallChange("Caption");
+            CallChange("Caption"); 
             CallChange("Description");
         }
 
@@ -74,8 +78,15 @@ namespace CryptThor.ViewModels
         #endregion
 
         #region Encryption/Decryption
+        /// <summary>
+        /// Main encrypt method called everytime something is encrypted/decrypted
+        /// </summary>
+        /// <param name="b">Encryption or Decryption</param>
+        /// <param name="plainText">Input text</param>
+        /// <param name="key">Key used to encode/decode</param>
         public void Encrypt(bool b, string plainText, string key)
         {
+            //key normalisation
             if(key != null)
             {
                 if(Caption != "Skytalé")
@@ -90,23 +101,25 @@ namespace CryptThor.ViewModels
                 key = key.Replace(" ", string.Empty);
 
                 var decomposed = key.Normalize(NormalizationForm.FormD);
-                var filtered = decomposed.Where(c => char.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark);
+                var filtered = decomposed.Where(c => char.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark); //removes czech characters
                 key = new String(filtered.ToArray());
 
                 CurrentKey = key;
                 CallChange("CurrentKey");
             }
 
+            //text normalisation
             if (plainText != null)
             {
                 var decomposed = plainText.Normalize(NormalizationForm.FormD);
-                var filtered = decomposed.Where(c => char.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark);
+                var filtered = decomposed.Where(c => char.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark); //removes czech characters
                 plainText = new String(filtered.ToArray());
 
                 CurrentText = plainText;
                 CallChange("CurrentText");
             }
 
+            //switch which chooses right cipher to use
             switch (Caption)
             {
                 case "Cézarova šifra":
@@ -124,11 +137,15 @@ namespace CryptThor.ViewModels
             }
         }
 
+        //call Encrypt method but with first param set to false
         public void Decrypt(string ciphertext, string key)
         {
             Encrypt(false, ciphertext, key);
         }
 
+        /// <summary>
+        /// Removes spaces from the input text
+        /// </summary>
         public void RemoveSpaces()
         {
             if(CurrentText != null)
@@ -138,6 +155,9 @@ namespace CryptThor.ViewModels
             }
         }
 
+        /// <summary>
+        /// Reverse the input text
+        /// </summary>
         public void TextReverse()
         {
             if(CurrentText != null)
@@ -149,6 +169,12 @@ namespace CryptThor.ViewModels
             }
         }
 
+        /// <summary>
+        /// Actual Caesar cipher calling
+        /// </summary>
+        /// <param name="encrypt"></param>
+        /// <param name="text"></param>
+        /// <param name="key"></param>
         void Caesar(bool encrypt, string text, string key)
         {
             if (key.Length != 1)
@@ -157,6 +183,12 @@ namespace CryptThor.ViewModels
             Vigenere(encrypt, text, key);
         }
 
+        /// <summary>
+        /// Actual Vigenere cipher calling
+        /// </summary>
+        /// <param name="encrypt"></param>
+        /// <param name="text"></param>
+        /// <param name="key"></param>
         void Vigenere(bool encrypt, string text, string key)
         {
             if (key.Length == 0)
@@ -174,6 +206,12 @@ namespace CryptThor.ViewModels
             }
         }
 
+        /// <summary>
+        /// Actual Vernam cipher calling
+        /// </summary>
+        /// <param name="encrypt"></param>
+        /// <param name="text"></param>
+        /// <param name="key"></param>
         void Vernam(bool encrypt, string text, string key)
         {
             if(encrypt)
@@ -193,6 +231,12 @@ namespace CryptThor.ViewModels
             Vigenere(encrypt, text, key);
         }
 
+        /// <summary>
+        /// Actual Scytale cipher calling
+        /// </summary>
+        /// <param name="encrypt"></param>
+        /// <param name="text"></param>
+        /// <param name="key"></param>
         void Scytale(bool encrypt, string text, string key)
         {
             text = text.Replace(" ", string.Empty);
