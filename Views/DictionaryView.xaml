@@ -7,22 +7,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="660" d:DesignWidth="850">
 
-    <!--TODO: include style into styles dictionary, colors, better wording-->
-    <UserControl.Resources>
-        <Style TargetType="Grid">
-            <Style.Resources>
-                <Style TargetType="TextBlock">
-                    <Setter Property="Foreground" Value="#002c54"/>
-                    <Setter Property="FontWeight" Value="Bold"/>
-                    <Setter Property="FontSize" Value="20"/>
-                    <Setter Property="TextWrapping" Value="Wrap"/>
-                    <Setter Property="Margin" Value="0,0,0,20"/>
-                </Style>
-                
-            </Style.Resources>
-        </Style>
-    </UserControl.Resources>
-    
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Images/bcg.png"/>
@@ -31,6 +15,8 @@
         <ScrollViewer VerticalScrollBarVisibility="Hidden">
             <StackPanel Margin="40,0,40,0">
                 <TextBlock Text="Slovník pojmů" FontSize="50" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                
+                
 
                 <TextBlock Text="Kryptologie: Věda o šifrách. Skládá se z kryptografie a kryptoanalýzy."/>
                 <TextBlock Text="Kryptigrafie: Věda o vytváření šifrovacích systémů (šifer), neboli zabývá se metodami utajení (šifrováním)."/>

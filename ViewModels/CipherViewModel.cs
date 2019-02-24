@@ -239,7 +239,6 @@ namespace CryptThor.ViewModels
         /// <param name="key"></param>
         void Scytale(bool encrypt, string text, string key)
         {
-            text = text.Replace(" ", string.Empty);
             CurrentText = text;
             CallChange("CurrentText");
 

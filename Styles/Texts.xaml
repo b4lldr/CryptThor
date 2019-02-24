@@ -2,13 +2,36 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:CryptThor">
 
+
+    <Style TargetType="TextBlock" x:Key="TextBase">
+        <Setter Property="Foreground" Value="#002c54"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="20"/>
+    </Style>
+
     <Style TargetType="Grid">
         <Style.Resources>
-            <Style TargetType="TextBlock">
-                <Setter Property="Foreground" Value="#002c54"/>
-                <Setter Property="FontWeight" Value="Bold"/>
-                <Setter Property="FontSize" Value="20"/>
+            <Style TargetType="TextBlock" BasedOn="{StaticResource TextBase}">
             </Style>
+        </Style.Resources>
+    </Style>
+
+    <Style TargetType="Grid" x:Key="IntroText">
+        <Style.Resources>
+            <Style TargetType="TextBlock" BasedOn="{StaticResource TextBase}">
+                <Setter Property="TextWrapping" Value="Wrap"/>
+            </Style>
+
+        </Style.Resources>
+    </Style>
+
+    <Style TargetType="Grid" x:Key="DictionaryText">
+        <Style.Resources>
+            <Style TargetType="TextBlock" BasedOn="{StaticResource TextBase}">
+                <Setter Property="TextWrapping" Value="Wrap"/>
+                <Setter Property="Margin" Value="0,0,0,20"/>
+            </Style>
+
         </Style.Resources>
     </Style>
 </ResourceDictionary>

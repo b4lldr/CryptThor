@@ -7,23 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="660" d:DesignWidth="850">
 
-    
-    <!--TODO: include style into styles dictionary, colors-->
-    <UserControl.Resources>
-        <Style TargetType="Grid">
-            <Style.Resources>
-                <Style TargetType="TextBlock">
-                    <Setter Property="Foreground" Value="#002c54"/>
-                    <Setter Property="FontWeight" Value="Bold"/>
-                    <Setter Property="FontSize" Value="20"/>
-                    <Setter Property="TextWrapping" Value="Wrap"/>
-                </Style>
-
-            </Style.Resources>
-        </Style>
-    </UserControl.Resources>
-    
-    <Grid>
+    <Grid Style="{StaticResource IntroText}">
         <Grid.Background>
             <ImageBrush ImageSource="/Images/bcg.png"/>
         </Grid.Background>
