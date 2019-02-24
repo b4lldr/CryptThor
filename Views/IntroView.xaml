@@ -18,13 +18,13 @@
 
                 <TextBlock Text="CryptThor je jednoduchá desktopová aplikace na šifrování textu."/>
                 <TextBlock Text="Umožňuje zašifrovat či dešifrovat libovolný text pomocí jakékoliv šifry z levého postraního menu, a to pomocí jednoduchého rozhraní."/>
-                <TextBlock Text="Rozhraní navíc umožňuje i drobné úpravy textu jako je odstranění mezer nebo otočení textu."/>
+                <TextBlock Text="Rozhraní kromě šifrování a dešifrování umožňuje i drobné úpravy textu jako je odstranění mezer nebo otočení textu."/>
                 <TextBlock Margin="0,0,0,20" Text="Ke každé šifře je také dostupný stručný popis pro lepší pochopení a orientaci."/>
                 <TextBlock Text="Tato uvítací obrazovka je dostupná pod knihou v horní liště."/>
                 <TextBlock Margin="0,0,0,20" Text="Vedle knihy můžete nalézt otazník, který vám zobrazí přehled základních kryptologických pojmů."/>
-                <TextBlock Text="Velikost okna je měnitelná, ale je pevně daná minimální velikost. Aplikace se chová jako klasické okno."/>
-                <TextBlock Margin="0,0,0,20" Text="V levém menu, v úvodní obrazovce, ve slovníku i v šifrovacím rozhraní se jde pohybovat kolečkem myši, pokud se celý obsah nevejde do okna."/>
-                <TextBlock Margin="0,0,0,20" FontSize="30" HorizontalAlignment="Center" Text="Obecné informace o šifrování"/>
+                <TextBlock Text="Velikost okna je měnitelná, ale je pevně daná minimální velikost. S oknem aplikace lze zacházet jako s klasickým oknem - lze jím tahat uchopením za horní lištu, poklepáním na lištu maximalizovat, měnit velikost taháním za okraje či ovládat okno tlačítky v pravém horním rohu."/>
+                <TextBlock Margin="0,0,0,20" Text="V levém menu, v úvodní obrazovce, ve slovníku i v šifrovacím rozhraní je možné se pohybovat kolečkem myši, pokud se celý obsah nevejde do okna."/>
+                <TextBlock Margin="0,0,0,20" FontSize="30" HorizontalAlignment="Center" Text="Obecné informace o způsobu šifrování"/>
                 <TextBlock Margin="0,0,0,20" Text="Pro jednoduchost jsou vždy při šifraci ze vstupního textu odebrány háčky a čárky nad písmeny."/>
                 <TextBlock Margin="0,0,0,20" Text="Všechny nepísmenné znaky (všetně mezer) šifrovány nejsou a ve výstupním textu zůstavají nezměněny. Příslušný znak v klíči je tak přeskočen!"/>
                 <TextBlock Margin="0,0,0,20" Text="V klíči jsou povoleny pouze písmena anglické abecedy. Napsat do pole lze i ostatní znaky, ale při šifraci budou odstraněny."/>

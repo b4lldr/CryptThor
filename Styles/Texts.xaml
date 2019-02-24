@@ -2,36 +2,53 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:CryptThor">
 
-
+    <!--ORIGIN TEXT STYLE-->
     <Style TargetType="TextBlock" x:Key="TextBase">
-        <Setter Property="Foreground" Value="#002c54"/>
+        <Setter Property="Foreground" Value="#001426"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="FontSize" Value="20"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
     </Style>
 
-    <Style TargetType="Grid">
+    <!--CIPHER VIEW TEXT STYLE-->
+    <Style TargetType="Grid"> <!--Currently unused-->
         <Style.Resources>
             <Style TargetType="TextBlock" BasedOn="{StaticResource TextBase}">
+                
             </Style>
         </Style.Resources>
     </Style>
 
-    <Style TargetType="Grid" x:Key="IntroText">
+    <!--INTRO VIEW TEXT STYLE-->
+    <Style TargetType="Grid" x:Key="IntroText"> <!--Currently unused-->
         <Style.Resources>
             <Style TargetType="TextBlock" BasedOn="{StaticResource TextBase}">
-                <Setter Property="TextWrapping" Value="Wrap"/>
+                
             </Style>
-
         </Style.Resources>
     </Style>
 
+    <!--DICTIONARY MAIN GRID VIEW TEXT STYLE-->
     <Style TargetType="Grid" x:Key="DictionaryText">
         <Style.Resources>
-            <Style TargetType="TextBlock" BasedOn="{StaticResource TextBase}">
-                <Setter Property="TextWrapping" Value="Wrap"/>
-                <Setter Property="Margin" Value="0,0,0,20"/>
+            <Style TargetType="Grid">
+                <Style.Resources>
+                    <Style TargetType="TextBlock" BasedOn="{StaticResource TextBase}">
+                        <Setter Property="Margin" Value="25"/>
+                    </Style>
+                </Style.Resources>
             </Style>
+        </Style.Resources>
+    </Style>
 
+    <!--DICTIONARY ODD GRID STYLE-->
+    <Style TargetType="Grid" x:Key="Odd">
+        <Setter Property="Background" Value="WhiteSmoke"/>
+
+        <Style.Resources>
+            <Style TargetType="TextBlock" BasedOn="{StaticResource TextBase}">
+                <Setter Property="Margin" Value="25"/>
+            </Style>
         </Style.Resources>
     </Style>
 </ResourceDictionary>

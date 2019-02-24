@@ -22,7 +22,7 @@
                 <TextBlock Text="Šifrování a dešifrování" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" Margin="0,0,0, 10"/>
                 <TextBox x:Name="textboxInput" Text="{Binding CurrentText}" Height="100" FontSize="20" TextWrapping="Wrap"/>
 
-                <TextBlock Text="Klíč" FontWeight="Bold"/>
+                <TextBlock Text="Klíč" FontWeight="Bold" HorizontalAlignment="Center"/>
                 <TextBox x:Name="textboxKey" Text="{Binding CurrentKey}" Height="30" Margin="0,0,0,20"/>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
@@ -40,7 +40,7 @@
 
                 <!--DESCRIPTION-->
                 <TextBlock Text="Popis šifry" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" Margin="0,0,0, 10"/>
-                <TextBlock Text="{Binding Description}" FontWeight="Bold" TextWrapping="Wrap"/>
+                <TextBlock Text="{Binding Description}" FontWeight="Bold"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

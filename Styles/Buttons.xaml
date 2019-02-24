@@ -13,7 +13,7 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="#002c54"/>
+                            <Setter TargetName="border" Property="Background" Value="#001426"/>
                             <Setter TargetName="cp" Property="TextBlock.Foreground" Value="White"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
