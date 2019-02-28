@@ -7,272 +7,274 @@
              mc:Ignorable="d" 
              d:DesignHeight="660" d:DesignWidth="850">
 
-    <!--TODO: possibly better styling, better organisation of the keywords-->
     <Grid Style="{StaticResource DictionaryText}">
         <Grid.Background>
             <ImageBrush ImageSource="/Images/bcg.png"/>
         </Grid.Background>
         
         <ScrollViewer VerticalScrollBarVisibility="Hidden">
-            <StackPanel Margin="40,0,40,0">
-                <TextBlock Text="Slovník kryptologických pojmů" FontSize="50" HorizontalAlignment="Center" Margin="0,0,0,20"/>
-
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Kryptologie" />
-                    <TextBlock Text="Věda zabývající se šiframi. Dělí se na kryptografii a kryptoanalýzu." Grid.Column="1" />
-                </Grid>
-                <Grid Style="{StaticResource Odd}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Kryptografie" />
-                    <TextBlock Text="Věda zabývající se vytvářením šifrovacích systémů (šifer) a zkoumající různé metody utajení (šifrování)." Grid.Column="1" />
-                </Grid>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Kryptoanalýza" />
-                    <TextBlock Text="Věda zabývající se analýzou a luštěním (dešifrováním) zašifrovaných zpráv." Grid.Column="1" />
-                </Grid>
-                <Grid Style="{StaticResource Odd}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Steganografie" />
-                    <TextBlock Text="Zabývá se ukrýváním samotné existence zprávy. Není tedy potřeba text nijak šifrovat, ale poté jeho bezpečnost závisí pouze na onom ukrytí zprávy. Mezi steganografické metody patří například ukrytí zprávy pomocí neviditelných inkoustů nebo ukrytí v jiném textu použitím předem definovaných pravidel." Grid.Column="1" />
-                </Grid>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Šifrování" />
-                    <TextBlock Text="Převod otevřeného textu na šifrový text." Grid.Column="1" />
-                </Grid>
-                <Grid Style="{StaticResource Odd}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Dešifrování" />
-                    <TextBlock Text="Převod šifrového textu na otevřený text." Grid.Column="1" />
-                </Grid>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Kódování" />
-                    <TextBlock Text="Převod informace z jedné formy do druhé. Například běžný text do Morseova kódu. Provádí se před samotným šifrováním" Grid.Column="1" />
-                </Grid>
-                <Grid Style="{StaticResource Odd}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Šifrovací systém (Šifra)" />
-                    <TextBlock Text="Systém, který změní zprávu (otevřený text) na zašifrovanou zprávu (šifrový text)." Grid.Column="1" />
-                </Grid>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Otevřený text (plain text, kryptogram)" />
-                    <TextBlock Text="Čitelný, nezašifrovaný text. Vstup šifrovacího algoritmu, výstup dešifrovacího." Grid.Column="1" />
-                </Grid>
-                <Grid Style="{StaticResource Odd}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Šifrový text (cipher text)" />
-                    <TextBlock Text="Zabezpečený (zašifrovaný) otevřený text. Vstup dešifrovacího algoritmu, výstup šifrovacího" Grid.Column="1" />
-                </Grid>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Klíč" />
-                    <TextBlock Text="Návod, jak postupovat při šifrování či dešifrování zprávy. Každý klíč zašyfruje zprávu jinak. Bez znalosti klíče je velmi obtížné/nemožné zprávu dešifrovat." Grid.Column="1" />
-                </Grid>
-                <Grid Style="{StaticResource Odd}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Klíčový prostor" />
-                    <TextBlock Text="Množina všech možných klíčů pro danou šifru. Velikost množiny určuje odolnost šifry vůči útoku hrubou silou." Grid.Column="1" />
-                </Grid>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Klíčové hospodářství" />
-                    <TextBlock Text="Označení pro zacházení s klíči jako je jejich uchovávání nebo předávání (distribuce)." Grid.Column="1" />
-                </Grid>
-                <Grid Style="{StaticResource Odd}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Substituce (záměna)" />
-                    <TextBlock Text="Znaky otevřeného textu se mění na jiné znaky. Jedná se o základní šifrovací metodu." Grid.Column="1" />
-                </Grid>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Transpozice (přesun)" />
-                    <TextBlock Text="Znaky otevřeného textu se nemění, pouze promíchají mezi sebou. Jedná se o základní šifrovací metodu." Grid.Column="1" />
-                </Grid>
-                <Grid Style="{StaticResource Odd}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Pen and paper šifra" />
-                    <TextBlock Text="Jednoduchá šifra snadno proveditelná i ručně pomocí tužky a papíru. Typicky se Pen and paper šifry používají v různých šifrovacích hrách a soutěžích, protože se dají použít naipříklad v přírodě i bez přítomnosti počítače. Jejich reálné využití (například v bezpečnosti) je minimální." Grid.Column="1" />
-                </Grid>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Monoalfabetická šifra" />
-                    <TextBlock Text="Šifra používající jen jednu abecedu." Grid.Column="1" />
-                </Grid>
-                <Grid Style="{StaticResource Odd}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Polyalfabetická šifra" />
-                    <TextBlock Text="Šifra používající více než jednu abecedu." Grid.Column="1" />
-                </Grid>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Symetrická šifra" />
-                    <TextBlock Text="Klíč použitý při šifrování i dešifrování je stejný. Tato metoda vyžaduje předání klíče před zahájením samotné šifrované komunikace, ale je možné provést předání asymetrickou šifrou. Symetrické šifry jsou typicky rychlejší než asymetrické." Grid.Column="1" />
-                </Grid>
-                <Grid Style="{StaticResource Odd}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Asymetrická šifra" />
-                    <TextBlock Text="Šifrování s využitím dvou klíčů - veřejného (public) a soukromého (private) klíče. Veřejný klíč je volně dostupný a kdokoliv pomocí něj může zašifrovat zprávu, privátní klíč vlastníme pouze my a tudíž nikdo jiný nemůže přečíst zašifrovanou zprávu." Grid.Column="1" />
-                </Grid>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Bloková šifra" />
-                    <TextBlock Text="Typ symetrické šifry, která pracuje s bloky konstantní délky. Každý blok se šifruje samostatně." Grid.Column="1" />
-                </Grid>
-                <Grid Style="{StaticResource Odd}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Komunikační (přenosový) kanál" />
-                    <TextBlock Text="Médium, prostřednictvím kterého dochází k přenosu zpráv (komunikaci). Typický komunikační kanál je internet, ale můžou jím být i noviny či další člověk." Grid.Column="1" />
-                </Grid>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Útok na šifru" />
-                    <TextBlock Text="Pokus (neadresované) osoby o prolomení (dešifrování) šifry bez znalosti klíče nebo typu šifry/metody šifrování/šifrovacího algoritmu." Grid.Column="1" />
-                </Grid>
-                <Grid Style="{StaticResource Odd}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Útok hrubou silou" />
-                    <TextBlock Text="Útok na šifru, který se snaží prolomit šifru díky prohledání celého klíčového prostoru (vyzkoušením všech možnáých klíčů). Velmi neefektivní způsob, na moderní používané šifry prakticky nepoužitelný - prolomení by i na nejvýkonějších počítačích trvalo až příliš dlouho." Grid.Column="1" />
-                </Grid>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Alice" />
-                    <TextBlock Text="Fiktivní postava reprezentující odesílatele šifrované zprávy." Grid.Column="1" />
-                </Grid>
-                <Grid Style="{StaticResource Odd}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Bob" />
-                    <TextBlock Text="Fiktivní postava reprezentující příjemce šifrované zprávy." Grid.Column="1" />
-                </Grid>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Eva" />
-                    <TextBlock Text="Fiktivní postava reprezentující odposlouchávače snažícího se číst komunikaci mezi Alicí a Bobem." Grid.Column="1" />
-                </Grid>
-                <Grid Style="{StaticResource Odd}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Klamač" />
-                    <TextBlock Text="Znak bez významu. Slouží ke ztížený prolomení šifry a zvyšuje tak její bezpečnost. Využívá se především v zábavných šifrách, často typu Pen and paper." Grid.Column="1" />
-                </Grid>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Nomenklátor" />
-                    <TextBlock Text="Zástupný znak, slovo nebo kratší slovní spojení. Slouží ke ztížený prolomení šifry a zvyšuje tak její bezpečnost. Nutnost komunikujících stran se předem domluvit, jaké nomenklátory budou používat a co znamenají. Využívá se především v zábavných šifrách, často typu Pen and paper." Grid.Column="1" />
-                </Grid>
-                <Grid Style="{StaticResource Odd}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Šifrovací funkce" />
-                    <TextBlock Text="Matematická funkce užívaná popisující postup šifrovacího algoritmu pro zašifrování textu." Grid.Column="1" />
-                </Grid>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Inverzní funkce" />
-                    <TextBlock Text="Opačná funkce k šifrovací funkcu, která popisuje způsob, jak dešifrovat zašifrovaný text a tím ho převést na text otevřený." Grid.Column="1" />
-                </Grid>
-                <Grid Style="{StaticResource Odd}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Jednosměrná funkce (se zadnímy vrátky)" />
-                    <TextBlock Text="Funkce používaná jako veřejný klíč při asymetrickém šifrování. Zadními vrátky je myšlem privátní klíč, který slouží k dešifrování zprávy." Grid.Column="1" />
-                </Grid>
+            <StackPanel>
+                <TextBlock FontWeight="Bold" Text="Slovník pojmů" FontSize="50" HorizontalAlignment="Center" Margin="0,20"/>
+                <Border Padding="40,20" Margin="40,0,40,40" Background="#B2FFFFFF">
+                    <StackPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Kryptologie" />
+                            <TextBlock Text="Věda zabývající se šiframi. Dělí se na kryptografii a kryptoanalýzu." Grid.Column="1" />
+                        </Grid>
+                        <Grid Style="{StaticResource Odd}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Kryptografie" />
+                            <TextBlock Text="Věda zabývající se vytvářením šifrovacích systémů (šifer) a zkoumající různé metody utajení (šifrování)." Grid.Column="1" />
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Kryptoanalýza" />
+                            <TextBlock Text="Věda zabývající se analýzou a luštěním (dešifrováním) zašifrovaných zpráv." Grid.Column="1" />
+                        </Grid>
+                        <Grid Style="{StaticResource Odd}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Steganografie" />
+                            <TextBlock Text="Zabývá se ukrýváním samotné existence zprávy. Není tedy potřeba text nijak šifrovat, ale poté jeho bezpečnost závisí pouze na onom ukrytí zprávy. Mezi steganografické metody patří například ukrytí zprávy pomocí neviditelných inkoustů nebo ukrytí v jiném textu použitím předem definovaných pravidel." Grid.Column="1" />
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Šifrování" />
+                            <TextBlock Text="Převod otevřeného textu na šifrový text." Grid.Column="1" />
+                        </Grid>
+                        <Grid Style="{StaticResource Odd}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Dešifrování" />
+                            <TextBlock Text="Převod šifrového textu na otevřený text." Grid.Column="1" />
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Kódování" />
+                            <TextBlock Text="Převod informace z jedné formy do druhé. Například běžný text do Morseova kódu. Provádí se před samotným šifrováním" Grid.Column="1" />
+                        </Grid>
+                        <Grid Style="{StaticResource Odd}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Šifrovací systém (šifra)" />
+                            <TextBlock Text="Systém, který změní zprávu (otevřený text) na zašifrovanou zprávu (šifrový text)." Grid.Column="1" />
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Otevřený text (plain text, kryptogram)" />
+                            <TextBlock Text="Čitelný, nezašifrovaný text. Vstup šifrovacího algoritmu, výstup dešifrovacího." Grid.Column="1" />
+                        </Grid>
+                        <Grid Style="{StaticResource Odd}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Šifrový text (cipher text)" />
+                            <TextBlock Text="Zabezpečený (zašifrovaný) otevřený text. Vstup dešifrovacího algoritmu, výstup šifrovacího" Grid.Column="1" />
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Klíč" />
+                            <TextBlock Text="Návod, jak v daném šifrovacím systému postupovat při šifrování či dešifrování zprávy. Každý klíč zašifruje zprávu jinak. Bez znalosti klíče je velmi obtížné/nemožné zprávu dešifrovat." Grid.Column="1" />
+                        </Grid>
+                        <Grid Style="{StaticResource Odd}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Klíčový prostor" />
+                            <TextBlock Text="Množina všech možných klíčů pro danou šifru. Velikost množiny určuje odolnost šifry vůči útoku hrubou silou." Grid.Column="1" />
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Klíčové hospodářství" />
+                            <TextBlock Text="Označení pro zacházení s klíči, jako je jejich uchovávání nebo předávání (distribuce)." Grid.Column="1" />
+                        </Grid>
+                        <Grid Style="{StaticResource Odd}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Substituce (záměna)" />
+                            <TextBlock Text="Znaky otevřeného textu se mění na jiné znaky. Jedná se o základní šifrovací metodu." Grid.Column="1" />
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Transpozice (přesun)" />
+                            <TextBlock Text="Znaky otevřeného textu se nemění, pouze promíchají mezi sebou. Jedná se o základní šifrovací metodu." Grid.Column="1" />
+                        </Grid>
+                        <Grid Style="{StaticResource Odd}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Pen and paper šifra" />
+                            <TextBlock Text="Jednoduchá šifra, snadno proveditelná i ručně pomocí tužky a papíru. Typicky se Pen and paper šifry používají v různých šifrovacích hrách a soutěžích, protože se dají použít například v přírodě i bez přítomnosti počítače. Jejich reálné využití (například v bezpečnostích systémech) je minimální." Grid.Column="1" />
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Monoalfabetická šifra" />
+                            <TextBlock Text="Šifra používající jen jednu abecedu." Grid.Column="1" />
+                        </Grid>
+                        <Grid Style="{StaticResource Odd}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Polyalfabetická šifra" />
+                            <TextBlock Text="Šifra používající více než jednu abecedu." Grid.Column="1" />
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Symetrická šifra" />
+                            <TextBlock Text="Klíč použitý při šifrování i dešifrování je stejný. Tato metoda vyžaduje předání klíče před zahájením samotné šifrované komunikace, ale je možné provést předání asymetrickou šifrou. Symetrické šifry jsou typicky rychlejší než asymetrické. Symetrické šifrování se používá například při zabezpečení Wi-Fi komunikace v rámci standardu WPA2 (šifra AES)." Grid.Column="1" />
+                        </Grid>
+                        <Grid Style="{StaticResource Odd}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Asymetrická šifra" />
+                            <TextBlock Text="Šifrování s využitím dvou klíčů - veřejného (public) a soukromého (private) klíče. Veřejný klíč je volně dostupný a kdokoliv pomocí něj může zašifrovat zprávu, privátní klíč vlastníme pouze my a tudíž nikdo jiný nemůže přečíst zašifrovanou zprávu. Asymetrické šifrování se používá například v digitálních podpisech nebo pro výměnu klíčů (šifra RSA)." Grid.Column="1" />
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Bloková šifra" />
+                            <TextBlock Text="Typ symetrické šifry, která pracuje s bloky konstantní délky. Každý blok se šifruje samostatně." Grid.Column="1" />
+                        </Grid>
+                        <Grid Style="{StaticResource Odd}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Komunikační (přenosový) kanál" />
+                            <TextBlock Text="Médium, prostřednictvím kterého dochází k přenosu zpráv (komunikaci). Typický komunikační kanál je internet, ale můžou jím být i noviny či další člověk." Grid.Column="1" />
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Útok na šifru" />
+                            <TextBlock Text="Pokus (neadresované) osoby o prolomení (dešifrování) šifry bez znalosti klíče nebo typu šifry / metody šifrování / šifrovacího algoritmu." Grid.Column="1" />
+                        </Grid>
+                        <Grid Style="{StaticResource Odd}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Útok hrubou silou" />
+                            <TextBlock Text="Útok na šifru, který se snaží prolomit šifru díky prohledání celého klíčového prostoru (vyzkoušením všech možných klíčů). Velmi neefektivní způsob, na moderní používané šifry prakticky nepoužitelný - prolomení by i na nejvýkonějších počítačích trvalo až příliš dlouho." Grid.Column="1" />
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Alice" />
+                            <TextBlock Text="Fiktivní postava reprezentující odesílatele šifrované zprávy." Grid.Column="1" />
+                        </Grid>
+                        <Grid Style="{StaticResource Odd}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Bob" />
+                            <TextBlock Text="Fiktivní postava reprezentující příjemce šifrované zprávy." Grid.Column="1" />
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Eva" />
+                            <TextBlock Text="Fiktivní postava reprezentující odposlouchávače snažícího se číst komunikaci mezi Alicí a Bobem." Grid.Column="1" />
+                        </Grid>
+                        <Grid Style="{StaticResource Odd}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Klamač" />
+                            <TextBlock Text="Znak bez významu. Slouží ke ztížení prolomení šifry a zvyšuje tak její bezpečnost. Využívá se především v zábavných šifrách, často typu Pen and paper." Grid.Column="1" />
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Nomenklátor" />
+                            <TextBlock Text="Zástupný znak, slovo nebo kratší slovní spojení. Slouží ke ztížení prolomení šifry a zvyšuje tak její bezpečnost. Nutnost komunikujících stran se předem domluvit, jaké nomenklátory budou používat a co znamenají. Využívá se především v zábavných šifrách, často typu Pen and paper." Grid.Column="1" />
+                        </Grid>
+                        <Grid Style="{StaticResource Odd}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Šifrovací funkce" />
+                            <TextBlock Text="Matematická funkce popisující postup šifrovacího algoritmu pro zašifrování textu." Grid.Column="1" />
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Inverzní funkce" />
+                            <TextBlock Text="Opačná funkce k šifrovací funkci, která popisuje způsob, jak dešifrovat zašifrovaný text a tím ho převést na text otevřený." Grid.Column="1" />
+                        </Grid>
+                        <Grid Style="{StaticResource Odd}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Jednosměrná funkce (se zadnímy vrátky)" />
+                            <TextBlock Text="Funkce používaná jako veřejný klíč při asymetrickém šifrování. Zadními vrátky je myšlem privátní klíč, který slouží k dešifrování zprávy." Grid.Column="1" />
+                        </Grid>
+                    </StackPanel>
+                </Border>
             </StackPanel>
         </ScrollViewer>
     </Grid>

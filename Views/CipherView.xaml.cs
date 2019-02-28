@@ -63,6 +63,17 @@ namespace CryptThor.Views
         {
             cvm.TextReverse();
         }
+
+        private void btnPasteToInput_Click(object sender, RoutedEventArgs e)
+        {
+            textboxInput.Text = Clipboard.GetText();
+        }
+
+        private void btnCopyFromOutput_Click(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetText(textboxOutput.Text);
+        }
         #endregion
+
     }
 }

@@ -63,29 +63,35 @@ namespace CryptThor
         #endregion
 
         #region NavButtons
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Btn_Click_Caesar(object sender, RoutedEventArgs e)
         {
             DataContext = cvm;
             cvm.ToCaesar();
 
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Btn_Click_Vigenere(object sender, RoutedEventArgs e)
         {
             DataContext = cvm;
             cvm.ToVigenere();
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void Btn_Click_Vernam(object sender, RoutedEventArgs e)
         {
             DataContext = cvm;
             cvm.ToVernam();
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
+        private void Btn_Click_Scytale(object sender, RoutedEventArgs e)
         {
             DataContext = cvm;
             cvm.ToScytale();
+        }
+
+        private void Btn_Click_Morse(object sender, RoutedEventArgs e)
+        {
+            DataContext = cvm;
+            cvm.ToMorse();
         }
         #endregion
     }

@@ -57,6 +57,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\MorseCode.cs" />
     <Compile Include="ViewModels\CipherViewModel.cs" />
     <Compile Include="ViewModels\Creator.cs" />
     <Compile Include="ViewModels\DictionaryViewModel.cs" />

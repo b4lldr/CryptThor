@@ -4,10 +4,10 @@
 
     <!--ORIGIN TEXT STYLE-->
     <Style TargetType="TextBlock" x:Key="TextBase">
-        <Setter Property="Foreground" Value="#001426"/>
-        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="#16253D"/>
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Margin" Value="0,5"/>
     </Style>
 
     <!--CIPHER VIEW TEXT STYLE-->
@@ -43,7 +43,7 @@
 
     <!--DICTIONARY ODD GRID STYLE-->
     <Style TargetType="Grid" x:Key="Odd">
-        <Setter Property="Background" Value="WhiteSmoke"/>
+        <Setter Property="Background" Value="#E5FFFFFF"/>
 
         <Style.Resources>
             <Style TargetType="TextBlock" BasedOn="{StaticResource TextBase}">

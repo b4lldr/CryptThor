@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CryptThor.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="660" d:DesignWidth="850">
+             d:DesignHeight="6600" d:DesignWidth="850">
 
     <!--TODO: font weight issue, better styling-->
     <Grid Grid.Row="1" Style="{StaticResource Content}">
@@ -14,33 +14,67 @@
         </Grid.Background>
 
         <ScrollViewer VerticalScrollBarVisibility="Hidden">
-            <StackPanel Margin="40,40,40,0">
+            <StackPanel Margin="40,20">
                 <!--CAPTION-->
-                <TextBlock Text="{Binding Caption}" HorizontalAlignment="Center" FontSize="50" Margin="0,0,0, 20"/>
+                <TextBlock Text="{Binding Caption}" HorizontalAlignment="Center" FontWeight="Bold" FontSize="50"/>
 
-                <!--ENCRYPTION/DECRYPTION-->
-                <TextBlock Text="Šifrování a dešifrování" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" Margin="0,0,0, 10"/>
-                <TextBox x:Name="textboxInput" Text="{Binding CurrentText}" Height="100" FontSize="20" TextWrapping="Wrap"/>
+                <!--INPUT-->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                
+                    <TextBlock Text="Vstup" FontWeight="Bold"/>
+                    <Button Grid.Column="1" x:Name="btnPasteToInput" Margin="0,0,0,5" HorizontalAlignment="Right" Content="vložit" Width="100" Height="30" Click="btnPasteToInput_Click" />
+                </Grid>
+                <TextBox x:Name="textboxInput" Text="{Binding CurrentInputText}" Height="120" FontSize="20" TextWrapping="Wrap"/>
 
-                <TextBlock Text="Klíč" FontWeight="Bold" HorizontalAlignment="Center"/>
-                <TextBox x:Name="textboxKey" Text="{Binding CurrentKey}" Height="30" Margin="0,0,0,20"/>
+                <!--KEY-->
+                <TextBlock Text="Klíč" FontWeight="Bold"/>
+                <TextBox x:Name="textboxKey" Text="{Binding CurrentKey}" Visibility="{Binding KeyVisibility}" Height="40" Margin="0,0,0,20" TextWrapping="Wrap"/>
 
+                <!--MAIN BUTTONS-->
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
-                    <Button  x:Name="btnEncode" Content="Šifrovat" Height="60" Width="120" Click="btnEncode_Click"/>
+                    <Button  x:Name="btnEncode" Content="ŠIFROVAT" Height="70" Width="140" Click="btnEncode_Click"/>
 
-                    <StackPanel Margin="60,0">
-                        <Button x:Name="btnRemoveSpaces" Content="Odstranit mezery" Width="100" Height="30" Click="btnRemoveSpaces_Click" Margin="0,0,0,10"/>
-                        <Button x:Name="btnReverseText" Content="Text pozpátku" Width="100" Height="30" Click="btnReverseText_Click"/>
+                    <StackPanel Margin="70,0">
+                        <Button x:Name="btnRemoveSpaces" Content="ODSTRANIT MEZERY" Width="140" Height="30" Click="btnRemoveSpaces_Click" Margin="0,0,0,10"/>
+                        <Button x:Name="btnReverseText" Content="TEXT POZPÁTKU" Width="140" Height="30" Click="btnReverseText_Click"/>
                     </StackPanel>
 
-                    <Button x:Name="btnDecode" Content="Dešifrovat" Height="60" Width="120" Click="btnDecode_Click"/>
+                    <Button x:Name="btnDecode" Content="DEŠIFROVAT" Height="70" Width="140" Click="btnDecode_Click"/>
                 </StackPanel>
 
-                <TextBox Text="{Binding Output, Mode=OneWay}" IsReadOnly="True" FontSize="20" Background="LightGray" Height="100" Margin="0,0,0,20"/>
+                <!--OUTPUT-->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <TextBlock Text="Výstup" FontWeight="Bold"/>
+                    <Button Grid.Column="1" x:Name="btnCopyFromOutput" Margin="0,0,0,5" HorizontalAlignment="Right" Content="kopírovat" Width="100" Height="30" Click="btnCopyFromOutput_Click" />
+                </Grid>
+                <TextBox x:Name="textboxOutput" Text="{Binding Output, Mode=OneWay}" IsReadOnly="True" FontSize="20" Height="120"/>
 
                 <!--DESCRIPTION-->
-                <TextBlock Text="Popis šifry" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" Margin="0,0,0, 10"/>
-                <TextBlock Text="{Binding Description}" FontWeight="Bold"/>
+                <Border Padding="40,20" Margin="40" Background="#B2FFFFFF">
+                    <StackPanel>
+                        <TextBlock Text="Zpracování vstupu" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Margin="0,0,0,20"/>
+                        <Border Padding="40, 20" Background="#E5FFFFFF">
+                            <StackPanel>
+                                <TextBlock Text="Text" HorizontalAlignment="Center" FontWeight="Bold" Margin="0,0,0, 10"/>
+                                <TextBlock Text="{Binding InputUsageDescription}" />
+                                <TextBlock Text="Klíč" HorizontalAlignment="Center" FontWeight="Bold" Margin="0,0,0, 10"/>
+                                <TextBlock Text="{Binding KeyUsageDescription}" />
+                            </StackPanel>
+                        </Border>
+
+                        <TextBlock Text="Popis šifry" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Margin="0,20"/>
+                        <TextBlock Text="{Binding Description}" Padding="40,20" Background="#E5FFFFFF"/>
+                    </StackPanel>
+                </Border>
             </StackPanel>
         </ScrollViewer>
     </Grid>
