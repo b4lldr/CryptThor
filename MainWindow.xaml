@@ -34,8 +34,8 @@
             <!--NAV-->
             <ScrollViewer VerticalScrollBarVisibility="Hidden"  Style="{StaticResource Nav}">
                 <StackPanel>
-                    <Button Content="Cézarova šifra" Click="Btn_Click_Caesar"/>
-                    <Button Content="Vigenerova šifra" Click="Btn_Click_Vigenere"/>
+                    <Button Content="Caesarova šifra" Click="Btn_Click_Caesar"/>
+                    <Button Content="Vigenèrova šifra" Click="Btn_Click_Vigenere"/>
                     <Button Content="Vernamova šifra" Click="Btn_Click_Vernam"/>
                     <Button Content="Skytalé" Click="Btn_Click_Scytale"/>
                     <Button Content="Morseova abeceda" Click="Btn_Click_Morse"/>

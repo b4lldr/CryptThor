@@ -25,14 +25,14 @@
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
                 
-                    <TextBlock Text="Vstup" FontWeight="Bold"/>
+                    <TextBlock Text="Vstupní text" FontWeight="Bold"/>
                     <Button Grid.Column="1" x:Name="btnPasteToInput" Margin="0,0,0,5" HorizontalAlignment="Right" Content="vložit" Width="100" Height="30" Click="btnPasteToInput_Click" />
                 </Grid>
-                <TextBox x:Name="textboxInput" Text="{Binding CurrentInputText}" Height="120" FontSize="20" TextWrapping="Wrap"/>
+                <TextBox x:Name="textboxInput" Text="{Binding InputText}" Height="120" FontSize="20" TextWrapping="Wrap"/>
 
                 <!--KEY-->
                 <TextBlock Text="Klíč" FontWeight="Bold"/>
-                <TextBox x:Name="textboxKey" Text="{Binding CurrentKey}" Visibility="{Binding KeyVisibility}" Height="40" Margin="0,0,0,20" TextWrapping="Wrap"/>
+                <TextBox x:Name="textboxKey" Text="{Binding Key}" Visibility="{Binding KeyVisibility}" Height="40" Margin="0,0,0,20" TextWrapping="Wrap"/>
 
                 <!--MAIN BUTTONS-->
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
@@ -65,14 +65,21 @@
                         <Border Padding="40, 20" Background="#E5FFFFFF">
                             <StackPanel>
                                 <TextBlock Text="Text" HorizontalAlignment="Center" FontWeight="Bold" Margin="0,0,0, 10"/>
-                                <TextBlock Text="{Binding InputUsageDescription}" />
-                                <TextBlock Text="Klíč" HorizontalAlignment="Center" FontWeight="Bold" Margin="0,0,0, 10"/>
-                                <TextBlock Text="{Binding KeyUsageDescription}" />
+                                <TextBlock Text="{Binding DescriptionInputTextUsage}" />
+                                <TextBlock Text="Klíč" HorizontalAlignment="Center" FontWeight="Bold" Margin="0,10"/>
+                                <TextBlock Text="{Binding DescriptionKeyUsage}" />
                             </StackPanel>
                         </Border>
 
                         <TextBlock Text="Popis šifry" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Margin="0,20"/>
-                        <TextBlock Text="{Binding Description}" Padding="40,20" Background="#E5FFFFFF"/>
+                        <Border Padding="40, 20" Background="#E5FFFFFF">
+                            <StackPanel>
+                                <TextBlock Text="Princip" HorizontalAlignment="Center" FontWeight="Bold" Margin="0,0,0, 10"/>
+                                <TextBlock Text="{Binding DescriptionPrinciple}" />
+                                <TextBlock Text="Historie" HorizontalAlignment="Center" FontWeight="Bold" Margin="0,10"/>
+                                <TextBlock Text="{Binding DescriptionHistory}" />
+                            </StackPanel>
+                        </Border>
                     </StackPanel>
                 </Border>
             </StackPanel>

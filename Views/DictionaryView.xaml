@@ -214,10 +214,18 @@
                                 <ColumnDefinition Width="300"/>
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
+                            <TextBlock Text="Frekvenční analýza" />
+                            <TextBlock Text="Metoda prolamování šifer, která využívá frekvence výskytů jednotlivých znaků šifrového textu a porovnává je s frekcencemi výskytů znaků daného jazyka. Typicky se tato metoda používá pro prolamování monoalfabetických šifer, ale jistým složitějším způsobem se dá použít i u šifer polyalfabetických." Grid.Column="1" />
+                        </Grid>
+                        <Grid Style="{StaticResource Odd}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
                             <TextBlock Text="Alice" />
                             <TextBlock Text="Fiktivní postava reprezentující odesílatele šifrované zprávy." Grid.Column="1" />
                         </Grid>
-                        <Grid Style="{StaticResource Odd}">
+                        <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="300"/>
                                 <ColumnDefinition />
@@ -225,7 +233,7 @@
                             <TextBlock Text="Bob" />
                             <TextBlock Text="Fiktivní postava reprezentující příjemce šifrované zprávy." Grid.Column="1" />
                         </Grid>
-                        <Grid>
+                        <Grid Style="{StaticResource Odd}">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="300"/>
                                 <ColumnDefinition />
@@ -233,7 +241,7 @@
                             <TextBlock Text="Eva" />
                             <TextBlock Text="Fiktivní postava reprezentující odposlouchávače snažícího se číst komunikaci mezi Alicí a Bobem." Grid.Column="1" />
                         </Grid>
-                        <Grid Style="{StaticResource Odd}">
+                        <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="300"/>
                                 <ColumnDefinition />
@@ -241,7 +249,7 @@
                             <TextBlock Text="Klamač" />
                             <TextBlock Text="Znak bez významu. Slouží ke ztížení prolomení šifry a zvyšuje tak její bezpečnost. Využívá se především v zábavných šifrách, často typu Pen and paper." Grid.Column="1" />
                         </Grid>
-                        <Grid>
+                        <Grid Style="{StaticResource Odd}">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="300"/>
                                 <ColumnDefinition />
@@ -249,7 +257,7 @@
                             <TextBlock Text="Nomenklátor" />
                             <TextBlock Text="Zástupný znak, slovo nebo kratší slovní spojení. Slouží ke ztížení prolomení šifry a zvyšuje tak její bezpečnost. Nutnost komunikujících stran se předem domluvit, jaké nomenklátory budou používat a co znamenají. Využívá se především v zábavných šifrách, často typu Pen and paper." Grid.Column="1" />
                         </Grid>
-                        <Grid Style="{StaticResource Odd}">
+                        <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="300"/>
                                 <ColumnDefinition />
@@ -257,7 +265,7 @@
                             <TextBlock Text="Šifrovací funkce" />
                             <TextBlock Text="Matematická funkce popisující postup šifrovacího algoritmu pro zašifrování textu." Grid.Column="1" />
                         </Grid>
-                        <Grid>
+                        <Grid Style="{StaticResource Odd}">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="300"/>
                                 <ColumnDefinition />
@@ -265,7 +273,7 @@
                             <TextBlock Text="Inverzní funkce" />
                             <TextBlock Text="Opačná funkce k šifrovací funkci, která popisuje způsob, jak dešifrovat zašifrovaný text a tím ho převést na text otevřený." Grid.Column="1" />
                         </Grid>
-                        <Grid Style="{StaticResource Odd}">
+                        <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="300"/>
                                 <ColumnDefinition />
