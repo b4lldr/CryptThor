@@ -1,0 +1,124 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:CryptThor.Locales"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <!--MainWindow-->
+    <system:String x:Key="navCaesar">Cézarova šifra</system:String>
+    <system:String x:Key="navVigenere">Vigenèrova šifra</system:String>
+    <system:String x:Key="navVernam">Vernamova šifra</system:String>
+    <system:String x:Key="navScytale">Skytalé</system:String>
+    <system:String x:Key="navMorse">Morseova abeceda</system:String>
+    <!--IntroView-->
+    <system:String x:Key="introTitle">Vítejte v aplikaci CryptThor!</system:String>
+    <system:String xml:space="preserve" x:Key="introDescriptionGeneral">
+CryptThor je jednoduchá desktopová aplikace na šifrování a dešifrování textu.
+Umožňuje zašifrovat či dešifrovat libovolný text pomocí jakékoliv šifry z levého postraního menu, a to pomocí jednoduchého rozhraní.
+Rozhraní kromě šifrování a dešifrování umožňuje i drobné úpravy textu jako je odstranění mezer nebo otočení textu. Dále je k dispozici tlačítko pro zkopírování výstupního textu a tlačítko pro vložení textu do vstupního pole. Do výstupního pole nelze psát, ale text v něm je možné klasicky označit myší (nebo klávesami ctrl+a) a následně zkopírovat klávesami ctrl+c.
+        
+Ke každé šifře je také dostupný stručný po'spis pro lepší pochopení a orientaci.
+        
+Tato uvítací obrazovka je dostupná pod knihou v horní liště.       
+Vedle knihy můžete nalézt otazník, který vám zobrazí přehled základních kryptologických pojmů.
+
+Velikost okna je měnitelná, ale je pevně daná minimální velikost. S oknem aplikace lze zacházet jako s klasickým oknem - lze jím tahat uchopením za horní lištu, poklepáním na lištu maximalizovat, měnit velikost taháním za okraje či ovládat okno tlačítky v pravém horním rohu.
+        
+V levém menu, v úvodní obrazovce, ve slovníku i v šifrovacím rozhraní je možné se pohybovat kolečkem myši, pokud se celý obsah nevejde do okna.
+    </system:String>
+    <system:String x:Key="introSubtitle">Obecné informace o způsobu šifrování</system:String>
+    <system:String xml:space="preserve" x:Key="introDescriptionEncryption">
+Pro jednoduchost a konzistentnost jsou u každé šifry (až na Skytalé, protože se jedná o transpoziční šifru) při šifraci odebrány ze vstupního textu háčky a čárky nad písmeny. U Morseovy abecedy jsou navíc všechna písmena převedena na malá.
+        
+Všechny nepísmenné znaky (včetně mezer) vstupního textu šifrovány nejsou a ve výstupním textu zůstavají nezměněny. Odpovídající znak v klíči je z tohoto důvodu také přeskočen. Výjimku opět tvoří Morseova abeceda, která dokáže zakódovat i některé další běžné znaky.
+        
+Formátování klíče probíhá z důvodu jednoduchosti obdobně jako formátování vstupního textu. V písmenných klíčích jsou povoleny pouze malá písmena anglické abecedy bez mezer.
+        
+Jako vstupní text i klíč lze použít i výše popsané nepovolené znaky, ale při samotném šifrování budou odstraněny/upraveny a to i ve vstupních polích, aby uživatel viděl, o které znaky se jedná a co se vlastně šifruje.
+        
+Konkrétní informace o způsobu šifrování a dešifrování pomocí jednotlivých šifer naleznete v popisu každé šifry.
+    </system:String>
+    <!--DictionaryView-->
+    <system:String x:Key="dictTitle">Slovník pojmů</system:String>
+    <system:String x:Key="dictKey1">Kryptologie</system:String>
+    <system:String x:Key="dictDesc1">Věda zabývající se šiframi. Dělí se na kryptografii a kryptoanalýzu.</system:String>
+    <system:String x:Key="dictKey2">Kryptografie</system:String>
+    <system:String x:Key="dictDesc2">Věda zabývající se vytvářením šifrovacích systémů (šifer) a zkoumající různé metody utajení (šifrování).</system:String>
+    <system:String x:Key="dictKey3">Kryptoanalýza</system:String>
+    <system:String x:Key="dictDesc3">Věda zabývající se analýzou a luštěním (dešifrováním) zašifrovaných zpráv.</system:String>
+    <system:String x:Key="dictKey4">Steganografie</system:String>
+    <system:String x:Key="dictDesc4">Zabývá se ukrýváním samotné existence zprávy. Není tedy potřeba text nijak šifrovat, ale poté jeho bezpečnost závisí pouze na onom ukrytí zprávy.</system:String>
+    <system:String x:Key="dictKey5">Šifrování</system:String>
+    <system:String x:Key="dictDesc5">Převod otevřeného textu na šifrový text.</system:String>
+    <system:String x:Key="dictKey6">Dešifrování</system:String>
+    <system:String x:Key="dictDesc6">Převod šifrového textu na otevřený text.</system:String>
+    <system:String x:Key="dictKey7">Kódování</system:String>
+    <system:String x:Key="dictDesc7">Převod informace z jedné formy do druhé. Například běžný text do Morseova kódu. Provádí se před samotným šifrováním.</system:String>
+    <system:String x:Key="dictKey8">Šifrovací systém (šifra)</system:String>
+    <system:String x:Key="dictDesc8">Systém, který změní zprávu (otevřený text) na zašifrovanou zprávu (šifrový text).</system:String>
+    <system:String x:Key="dictKey9">Otevřený text (plain text)</system:String>
+    <system:String x:Key="dictDesc9">Čitelný, nezašifrovaný text. Vstup šifrovacího algoritmu, výstup dešifrovacího.</system:String>
+    <system:String x:Key="dictKey10">Šifrový text (cipher text, kryptogram)</system:String>
+    <system:String x:Key="dictDesc10">Zabezpečený (zašifrovaný) otevřený text. Vstup dešifrovacího algoritmu, výstup šifrovacího</system:String>
+    <system:String x:Key="dictKey11">Klíč</system:String>
+    <system:String x:Key="dictDesc11">Návod, jak v daném šifrovacím systému postupovat při šifrování či dešifrování zprávy. Každý klíč zašifruje zprávu jinak. Bez znalosti klíče je velmi obtížné/nemožné zprávu dešifrovat.</system:String>
+    <system:String x:Key="dictKey12">Klíčový prostor</system:String>
+    <system:String x:Key="dictDesc12">Množina všech možných klíčů pro danou šifru. Velikost množiny určuje odolnost šifry vůči útoku hrubou silou.</system:String>
+    <system:String x:Key="dictKey13">Klíčové hospodářství</system:String>
+    <system:String x:Key="dictDesc13">Označení pro zacházení s klíči, jako je jejich uchovávání nebo předávání (distribuce).</system:String>
+    <system:String x:Key="dictKey14">Substituce (záměna)</system:String>
+    <system:String x:Key="dictDesc14">Znaky otevřeného textu se mění na jiné znaky. Jedná se o základní šifrovací metodu.</system:String>
+    <system:String x:Key="dictKey15">Transpozice (přesun)</system:String>
+    <system:String x:Key="dictDesc15">Znaky otevřeného textu se nemění, pouze promíchají mezi sebou. Jedná se o základní šifrovací metodu.</system:String>
+    <system:String x:Key="dictKey16">Pen and paper šifra</system:String>
+    <system:String x:Key="dictDesc16">Jednoduchá šifra, snadno proveditelná i ručně pomocí tužky a papíru. Typicky se Pen and paper šifry používají v různých šifrovacích hrách a soutěžích, protože se dají použít například v přírodě i bez přítomnosti počítače. Jejich reálné využití (například v bezpečnostích systémech) je minimální.</system:String>
+    <system:String x:Key="dictKey17">Monoalfabetická šifra</system:String>
+    <system:String x:Key="dictDesc17">Šifra používající jen jednu abecedu.</system:String>
+    <system:String x:Key="dictKey18">Polyalfabetická šifra</system:String>
+    <system:String x:Key="dictDesc18">Šifra používající více než jednu abecedu.</system:String>
+    <system:String x:Key="dictKey19">Symetrická šifra</system:String>
+    <system:String x:Key="dictDesc19">Klíč použitý při šifrování i dešifrování je stejný. Tato metoda vyžaduje předání klíče před zahájením samotné šifrované komunikace, ale je možné provést předání asymetrickou šifrou. Symetrické šifry jsou typicky rychlejší než asymetrické. Symetrické šifrování se používá například při zabezpečení Wi-Fi komunikace v rámci standardu WPA2 (šifra AES).</system:String>
+    <system:String x:Key="dictKey20">Asymetrická šifra</system:String>
+    <system:String x:Key="dictDesc20">Šifrování s využitím dvou klíčů - veřejného (public) a soukromého (private) klíče. Veřejný klíč je volně dostupný a kdokoliv pomocí něj může zašifrovat zprávu, privátní klíč vlastníme pouze my a tudíž nikdo jiný nemůže přečíst zašifrovanou zprávu. Asymetrické šifrování se používá například v digitálních podpisech nebo pro výměnu klíčů (šifra RSA).</system:String>
+    <system:String x:Key="dictKey21">Bloková šifra</system:String>
+    <system:String x:Key="dictDesc21">Typ symetrické šifry, která pracuje s bloky konstantní délky. Každý blok se šifruje samostatně.</system:String>
+    <system:String x:Key="dictKey22">Komunikační (přenosový) kanál</system:String>
+    <system:String x:Key="dictDesc22">Médium, prostřednictvím kterého dochází k přenosu zpráv (komunikaci). Typický komunikační kanál je internet, ale můžou jím být i noviny či další člověk.</system:String>
+    <system:String x:Key="dictKey23">Útok na šifru</system:String>
+    <system:String x:Key="dictDesc23">Pokus (neadresované) osoby o prolomení (dešifrování) šifry bez znalosti klíče nebo typu šifry / metody šifrování / šifrovacího algoritmu.</system:String>
+    <system:String x:Key="dictKey24">Útok hrubou silou</system:String>
+    <system:String x:Key="dictDesc24">Útok na šifru, který se snaží prolomit šifru díky prohledání celého klíčového prostoru (vyzkoušením všech možných klíčů). Velmi neefektivní způsob, na moderní používané šifry prakticky nepoužitelný - prolomení by i na nejvýkonějších počítačích trvalo až příliš dlouho.</system:String>
+    <system:String x:Key="dictKey25">Frekvenční analýza</system:String>
+    <system:String x:Key="dictDesc25">Metoda prolamování šifer, která využívá frekvence výskytů jednotlivých znaků šifrového textu a porovnává je s frekcencemi výskytů znaků daného jazyka. Typicky se tato metoda používá pro prolamování monoalfabetických šifer, ale jistým složitějším způsobem se dá použít i u šifer polyalfabetických.</system:String>
+    <system:String x:Key="dictKey26">Alice</system:String>
+    <system:String x:Key="dictDesc26">Fiktivní postava reprezentující odesílatele šifrované zprávy.</system:String>
+    <system:String x:Key="dictKey27">Bob</system:String>
+    <system:String x:Key="dictDesc27">Fiktivní postava reprezentující příjemce šifrované zprávy.</system:String>
+    <system:String x:Key="dictKey28">Eva</system:String>
+    <system:String x:Key="dictDesc28">Fiktivní postava reprezentující odposlouchávače snažícího se číst komunikaci mezi Alicí a Bobem.</system:String>
+    <system:String x:Key="dictKey29">Klamač</system:String>
+    <system:String x:Key="dictDesc29">Znak bez významu. Slouží ke ztížení prolomení šifry a zvyšuje tak její bezpečnost. Využívá se především v zábavných šifrách, často typu Pen and paper.</system:String>
+    <system:String x:Key="dictKey30">Nomenklátor</system:String>
+    <system:String x:Key="dictDesc30">Zástupný znak, slovo nebo kratší slovní spojení. Slouží ke ztížení prolomení šifry a zvyšuje tak její bezpečnost. Nutnost komunikujících stran se předem domluvit, jaké nomenklátory budou používat a co znamenají. Využívá se především v zábavných šifrách, často typu Pen and paper.</system:String>
+    <system:String x:Key="dictKey31">Šifrovací funkce</system:String>
+    <system:String x:Key="dictDesc31">Matematická funkce popisující postup šifrovacího algoritmu pro zašifrování textu.</system:String>
+    <system:String x:Key="dictKey32">Inverzní funkce</system:String>
+    <system:String x:Key="dictDesc32">Opačná funkce k šifrovací funkci, která popisuje způsob, jak dešifrovat zašifrovaný text a tím ho převést na text otevřený.</system:String>
+    <system:String x:Key="dictKey33">Jednosměrná funkce (se zadnímy vrátky)</system:String>
+    <system:String x:Key="dictDesc33">Funkce používaná jako veřejný klíč při asymetrickém šifrování. Zadními vrátky je myšlem privátní klíč, který slouží k dešifrování zprávy.</system:String>
+    <!--CipherView-->
+    <system:String x:Key="cipherInput">Vstup</system:String>
+    <system:String x:Key="cipherPaste">vložit</system:String>
+    <system:String x:Key="cipherKey">Klíč</system:String>
+    <system:String x:Key="cipherEncipher">ŠIFROVAT</system:String>
+    <system:String x:Key="cipherDecipher">DEŠIFROVAT</system:String>
+    <system:String x:Key="cipherRemoveSpaces">ODSTRANIT MEZERY</system:String>
+    <system:String x:Key="cipherReverse">TEXT POZPÁTKU</system:String>
+    <system:String x:Key="cipherOutput">Výstup</system:String>
+    <system:String x:Key="cipherCopy">kopírovat</system:String>
+    <system:String x:Key="cipherInputHandlingTitle">Zpracování vstupu</system:String>
+    <system:String x:Key="cipherInputHandlingText">Text</system:String>
+    <system:String x:Key="cipherInputHandlingKey">Klíč</system:String>
+    <system:String x:Key="cipherDescription">Popis šifry</system:String>
+    <system:String x:Key="cipherDescriptionPrinciple">Princip</system:String>
+    <system:String x:Key="cipherDescriptionHistory">Historie</system:String>
+</ResourceDictionary>

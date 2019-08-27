@@ -23,10 +23,16 @@ namespace CryptThor.Views
     {
         CipherViewModel cvm = Creator.cvm;
 
+        string errorTitle;
 
         public CipherView()
         {
             InitializeComponent();
+
+            if (cvm.Language == "cs")
+                errorTitle = "Chyba";
+            else
+                errorTitle = "Error";
         }
 
         #region ContentButtons
@@ -38,7 +44,7 @@ namespace CryptThor.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Chyba", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show(ex.Message, errorTitle, MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
         }
 
@@ -50,7 +56,7 @@ namespace CryptThor.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Chyba", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show(ex.Message, errorTitle, MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
         }
 

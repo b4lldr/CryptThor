@@ -1,0 +1,124 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:CryptThor.Locales"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <!--MainWindow-->
+    <system:String x:Key="navCaesar">Caesar cipher</system:String>
+    <system:String x:Key="navVigenere">Vigenère cipher</system:String>
+    <system:String x:Key="navVernam">Vernam cipher</system:String>
+    <system:String x:Key="navScytale">Scytale</system:String>
+    <system:String x:Key="navMorse">Morse code</system:String>
+    <!--IntroView-->
+    <system:String x:Key="introTitle">Welcome to CryptThor!</system:String>
+    <system:String xml:space="preserve" x:Key="introDescriptionGeneral">
+CryptThor is a simple desktop application for text encryption and decryption.
+It allows to encrypt or decrypt user-specified text using any cipher from the side menu via the simple interface.
+In the interface, besides the encryption and decryption, user can perform minor text editing like space removal or text reverse. Buttons for copying output text and pasting input text are also available for better comfort. You cannot write into the output box, but you can highlight the text in it with a mouse (or by pressing ctrl+a) and copy it by pressing ctrl+c for further use.
+
+Below each cipher you can find a brief description for better understanding and orientation.
+
+This intro page is available under the book icon in the upper bar.
+Next to the book you can find the question mark, which shows you a dictionary of fundamental cryptological terms.
+        
+The window size is adjustable, but there is given minimal size. The window behaves like a normal window you are used to.
+        
+In the sidebar, intro page, dictionary and cipher interface you can scroll down and up if content does not fit completely.
+    </system:String>
+    <system:String x:Key="introSubtitle">General information about encryption methods</system:String>
+    <system:String xml:space="preserve" x:Key="introDescriptionEncryption">
+For the sake of simplicity and consistency, for each cipher (except for Scytale, because it is a transposition cipher) diacritic is removed from the input text before encryption. In Morse code, all letters are also converted to lowercase.
+        
+All non-letter characters, including whitespace characters, in the input text are encrypted to themselves - they stay unchanged while the key character is "skipped". Again, Morse code is the exeption, because it can encode some other common characters.
+        
+Key formatting is pretty similar to input formatting. There are enabled either lowercase English alphabet (no whitespace characters) or numbers.
+        
+In both input text and key fields you can type and send even characters banned above, but they will be automatically removed/altered before the encryption. User can see the altered input and key in the corresponding fields.
+        
+Specific information about how input is handled is available in the description below each cipher.
+    </system:String>
+    <!--DictionaryView-->
+    <system:String x:Key="dictTitle">Dictionary</system:String>
+    <system:String x:Key="dictKey1">Cryptology</system:String>
+    <system:String x:Key="dictDesc1">.</system:String>
+    <system:String x:Key="dictKey2">Cryptography</system:String>
+    <system:String x:Key="dictDesc2">.</system:String>
+    <system:String x:Key="dictKey3">Cryptanalysis</system:String>
+    <system:String x:Key="dictDesc3">.</system:String>
+    <system:String x:Key="dictKey4">Steganography</system:String>
+    <system:String x:Key="dictDesc4">.</system:String>
+    <system:String x:Key="dictKey5">Encryption</system:String>
+    <system:String x:Key="dictDesc5">.</system:String>
+    <system:String x:Key="dictKey6">Decryption</system:String>
+    <system:String x:Key="dictDesc6">.</system:String>
+    <system:String x:Key="dictKey7">Encoding</system:String>
+    <system:String x:Key="dictDesc7">.</system:String>
+    <system:String x:Key="dictKey8">Cryptosystem (cipher)</system:String>
+    <system:String x:Key="dictDesc8">.</system:String>
+    <system:String x:Key="dictKey9">Plain text </system:String>
+    <system:String x:Key="dictDesc9">.</system:String>
+    <system:String x:Key="dictKey10">Cipher text (cryptogram)</system:String>
+    <system:String x:Key="dictDesc10">.</system:String>
+    <system:String x:Key="dictKey11">Key</system:String>
+    <system:String x:Key="dictDesc11">.</system:String>
+    <system:String x:Key="dictKey12">Key space</system:String>
+    <system:String x:Key="dictDesc12">.</system:String>
+    <system:String x:Key="dictKey13">Key policy</system:String>
+    <system:String x:Key="dictDesc13">.</system:String>
+    <system:String x:Key="dictKey14">Substitution</system:String>
+    <system:String x:Key="dictDesc14">.</system:String>
+    <system:String x:Key="dictKey15">Transposition</system:String>
+    <system:String x:Key="dictDesc15">.</system:String>
+    <system:String x:Key="dictKey16">Pen and paper cipher</system:String>
+    <system:String x:Key="dictDesc16">.</system:String>
+    <system:String x:Key="dictKey17">Monoalphabetical cipher</system:String>
+    <system:String x:Key="dictDesc17">.</system:String>
+    <system:String x:Key="dictKey18">Polyalphabetical cipher</system:String>
+    <system:String x:Key="dictDesc18">.</system:String>
+    <system:String x:Key="dictKey19">Symmetric cipher</system:String>
+    <system:String x:Key="dictDesc19">.</system:String>
+    <system:String x:Key="dictKey20">Asymmetric cipher</system:String>
+    <system:String x:Key="dictDesc20">.</system:String>
+    <system:String x:Key="dictKey21">Block cipher</system:String>
+    <system:String x:Key="dictDesc21">.</system:String>
+    <system:String x:Key="dictKey22">Communication channel</system:String>
+    <system:String x:Key="dictDesc22">.</system:String>
+    <system:String x:Key="dictKey23">Attack on cipher</system:String>
+    <system:String x:Key="dictDesc23">.</system:String>
+    <system:String x:Key="dictKey24">Brute force attack</system:String>
+    <system:String x:Key="dictDesc24">.</system:String>
+    <system:String x:Key="dictKey25">Frequency analysis</system:String>
+    <system:String x:Key="dictDesc25">.</system:String>
+    <system:String x:Key="dictKey26">Alice</system:String>
+    <system:String x:Key="dictDesc26">.</system:String>
+    <system:String x:Key="dictKey27">Bob</system:String>
+    <system:String x:Key="dictDesc27">.</system:String>
+    <system:String x:Key="dictKey28">Eve</system:String>
+    <system:String x:Key="dictDesc28">.</system:String>
+    <system:String x:Key="dictKey29">Deceiver</system:String>
+    <system:String x:Key="dictDesc29">.</system:String>
+    <system:String x:Key="dictKey30">Nomenclator</system:String>
+    <system:String x:Key="dictDesc30">.</system:String>
+    <system:String x:Key="dictKey31">Cipher function</system:String>
+    <system:String x:Key="dictDesc31">.</system:String>
+    <system:String x:Key="dictKey32">Inverse function</system:String>
+    <system:String x:Key="dictDesc32">.</system:String>
+    <system:String x:Key="dictKey33">One-way function (with backdoor)</system:String>
+    <system:String x:Key="dictDesc33">.</system:String>
+    <!--CipherView-->
+    <system:String x:Key="cipherInput">Input</system:String>
+    <system:String x:Key="cipherPaste">paste</system:String>
+    <system:String x:Key="cipherKey">Key</system:String>
+    <system:String x:Key="cipherEncipher">ENCIPHER</system:String>
+    <system:String x:Key="cipherDecipher">DECIPHER</system:String>
+    <system:String x:Key="cipherRemoveSpaces">REMOVE SPACES</system:String>
+    <system:String x:Key="cipherReverse">TEXT REVERSE</system:String>
+    <system:String x:Key="cipherOutput">Output</system:String>
+    <system:String x:Key="cipherCopy">copy</system:String>
+    <system:String x:Key="cipherInputHandlingTitle">Input handling</system:String>
+    <system:String x:Key="cipherInputHandlingText">Text</system:String>
+    <system:String x:Key="cipherInputHandlingKey">Key</system:String>
+    <system:String x:Key="cipherDescription">Cipher description</system:String>
+    <system:String x:Key="cipherDescriptionPrinciple">Principle</system:String>
+    <system:String x:Key="cipherDescriptionHistory">History</system:String>
+</ResourceDictionary>

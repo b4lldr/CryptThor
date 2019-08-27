@@ -14,23 +14,12 @@
 
         <ScrollViewer VerticalScrollBarVisibility="Hidden">
             <StackPanel>
-                <TextBlock Text="Vítejte v aplikaci CryptThor!" FontSize="50" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,20"/>
+                <TextBlock Text="{DynamicResource introTitle}" FontSize="50" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,20"/>
                 <Border Padding="40,20" Margin="40,0,40,40" Background="#B2FFFFFF">
                     <StackPanel>
-                        <TextBlock Text="CryptThor je jednoduchá desktopová aplikace na šifrování textu."/>
-                        <TextBlock Text="Umožňuje zašifrovat či dešifrovat libovolný text pomocí jakékoliv šifry z levého postraního menu, a to pomocí jednoduchého rozhraní."/>
-                        <TextBlock Margin="0,0,0,20" Text="Rozhraní kromě šifrování a dešifrování umožňuje i drobné úpravy textu jako je odstranění mezer nebo otočení textu. Dále je k dispozici tlačítko pro zkopírování výstupního textu a tlačítko pro vložení textu do vstupního pole. Do výstupního pole nelze psát, ale text v něm je možné klasicky označit myší (nebo klávesami ctrl+a) a následně zkopírovat klávesami ctrl+c."/>
-                        <TextBlock Margin="0,0,0,20" Text="Ke každé šifře je také dostupný stručný popis pro lepší pochopení a orientaci."/>
-                        <TextBlock Text="Tato uvítací obrazovka je dostupná pod knihou v horní liště."/>
-                        <TextBlock Margin="0,0,0,20" Text="Vedle knihy můžete nalézt otazník, který vám zobrazí přehled základních kryptologických pojmů."/>
-                        <TextBlock Text="Velikost okna je měnitelná, ale je pevně daná minimální velikost. S oknem aplikace lze zacházet jako s klasickým oknem - lze jím tahat uchopením za horní lištu, poklepáním na lištu maximalizovat, měnit velikost taháním za okraje či ovládat okno tlačítky v pravém horním rohu."/>
-                        <TextBlock Margin="0,0,0,20" Text="V levém menu, v úvodní obrazovce, ve slovníku i v šifrovacím rozhraní je možné se pohybovat kolečkem myši, pokud se celý obsah nevejde do okna."/>
-                        <TextBlock Margin="0,0,0,20" FontSize="30" HorizontalAlignment="Center" FontWeight="Bold" Text="Obecné informace o způsobu šifrování"/>
-                        <TextBlock Margin="0,0,0,20" Text="Pro jednoduchost a konzistentnost jsou u každé šifry (až na Skytalé, protože se jedná o transpoziční šifru) při šifraci odebrány ze vstupního textu háčky a čárky nad písmeny. U Morseovy abecedy jsou navíc všechna písmena převedena na malá."/>
-                        <TextBlock Margin="0,0,0,20" Text="Všechny nepísmenné znaky (včetně mezer) vstupního textu šifrovány nejsou a ve výstupním textu zůstavají nezměněny. Odpovídající znak v klíči je z tohoto důvodu také přeskočen. Výjimku opět tvoří Morseova abeceda, která dokáže zakódovat i některé další běžné znaky."/>
-                        <TextBlock Margin="0,0,0,20" Text="Formátování klíče probíhá z důvodu jednoduchosti obdobně jako formátování vstupního textu. V písmenných klíčích jsou povoleny pouze malá písmena anglické abecedy bez mezer."/>
-                        <TextBlock Margin="0,0,0,20" Text="Jako vstupní text i klíč lze použít i výše popsané nepovolené znaky, ale při samotném šifrování budou odstraněny/upraveny a to i ve vstupních polích, aby uživatel viděl, o které znaky se jedná a co se vlastně šifruje."/>
-                        <TextBlock Margin="0,0,0,20" Text="Konkrétní informace o způsobu šifrování a dešifrování pomocí jednotlivých šifer naleznete v popisu každé šifry."/>
+                        <TextBlock Text="{DynamicResource introDescriptionGeneral}" />
+                        <TextBlock Margin="0,0,0,20" FontSize="30" HorizontalAlignment="Center" FontWeight="Bold" Text="{DynamicResource introSubtitle}"/>
+                        <TextBlock Text="{DynamicResource introDescriptionEncryption}" />
                     </StackPanel>
                 </Border>
             </StackPanel>

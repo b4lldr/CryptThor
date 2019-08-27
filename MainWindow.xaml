@@ -23,25 +23,44 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <!--LOGO & NAV-->
-        <DockPanel Background="#30476d">
-            
+        <!--SIDEBAR-->
+        <Grid Background="#30476d">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition />
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
             <!--LOGO-->
-            <Grid Background="#30476d" WindowChrome.IsHitTestVisibleInChrome="True" DockPanel.Dock="Top"> <!--Grid with bcg to make sure drag does not work here-->
+            <Grid Background="#30476d" WindowChrome.IsHitTestVisibleInChrome="True" DockPanel.Dock="Top">
+                <!--Grid with bcg to make sure drag does not work here-->
                 <Image Source="/Images/logo.png" Margin="20,10,20,30"/>
             </Grid>
 
             <!--NAV-->
-            <ScrollViewer VerticalScrollBarVisibility="Hidden"  Style="{StaticResource Nav}">
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Hidden" Margin="0 0 0 20" Style="{StaticResource Nav}">
                 <StackPanel>
-                    <Button Content="Caesarova šifra" Click="Btn_Click_Caesar"/>
-                    <Button Content="Vigenèrova šifra" Click="Btn_Click_Vigenere"/>
-                    <Button Content="Vernamova šifra" Click="Btn_Click_Vernam"/>
-                    <Button Content="Skytalé" Click="Btn_Click_Scytale"/>
-                    <Button Content="Morseova abeceda" Click="Btn_Click_Morse"/>
+                    <Button Content="{DynamicResource navCaesar}" Click="Btn_Click_Caesar"/>
+                    <Button Content="{DynamicResource navVigenere}" Click="Btn_Click_Vigenere"/>
+                    <Button Content="{DynamicResource navVernam}" Click="Btn_Click_Vernam"/>
+                    <Button Content="{DynamicResource navScytale}" Click="Btn_Click_Scytale"/>
+                    <Button Content="{DynamicResource navMorse}" Click="Btn_Click_Morse"/>
                 </StackPanel>
             </ScrollViewer>
-        </DockPanel>
+
+            <!--LANGUAGE-->
+            <StackPanel Grid.Row="2" Margin="5 0">
+                <Border Height="4" Background="#001426"/>
+
+                <Grid Background="#16253D">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Style="{StaticResource Nav-lang}">
+                        <Button Content="CZ" Width="60" Height="Auto" Margin="5" Click="Btn_Click_Cs"/>
+
+                        <Button Content="EN" Width="60" Height="30" Margin="5" Click="Btn_Click_En"/>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </Grid>
 
         <!--TOP & CONTENT-->
         <Grid Grid.Column="1">
@@ -87,7 +106,7 @@
                 <Grid.Background>
                     <ImageBrush ImageSource="/Images/bcg.png"/>
                 </Grid.Background>
-                
+
                 <ContentControl Content="{Binding}"/>
             </Grid>
         </Grid>

@@ -28,6 +28,8 @@ namespace CryptThor
             InitializeComponent();
 
             DataContext = new IntroViewModel();
+
+            SetLanguage("Lang_EN.xaml");
         }
 
         #region TopButtons
@@ -93,6 +95,24 @@ namespace CryptThor
             DataContext = cvm;
             cvm.ToMorse();
         }
+
+        private void Btn_Click_Cs(object sender, RoutedEventArgs e)
+        {
+            SetLanguage("Lang_CS.xaml");
+        }
+
+        private void Btn_Click_En(object sender, RoutedEventArgs e)
+        {
+            SetLanguage("Lang_EN.xaml");
+        }
         #endregion
+
+        private void SetLanguage(string fileName) {
+            ResourceDictionary dict = new ResourceDictionary();
+            dict.Source = new Uri("..\\Locales\\" + fileName, UriKind.Relative);
+            this.Resources.MergedDictionaries.Add(dict);
+
+            cvm.SetLanguage(fileName.Substring(5, 2).ToLower());
+        }
     }
 }
